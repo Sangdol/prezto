@@ -39,6 +39,7 @@ install ranger
 install tig
 install emacs
 install trash
+install maven
 
 tap homebrew/versions
 install mysql
