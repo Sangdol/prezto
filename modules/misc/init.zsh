@@ -23,7 +23,7 @@ alias oo='open .'
 
 # Python server
 serve() {
-    port=${1:-8080}
+    local port=${1:-8080}
     python -m SimpleHTTPServer $port > /dev/null 2>&1 &
     open http://localhost:$port
 }
