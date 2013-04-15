@@ -1,0 +1,14 @@
+set incsearch
+set ignorecase
+
+" From Vim 7.3, it can yank to and paste from clipboard
+set clipboard=unnamed
+
+" easy esc
+inoremap jk <esc>
+
+" Create Blank Newlines and stay in Normal mode
+nnoremap zj o<Esc>
+nnoremap zk O<Esc>
+nnoremap zh i<Space><Right><Esc>
+nnoremap zl a<Space><Left><Esc>
