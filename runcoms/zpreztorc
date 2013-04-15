@@ -33,7 +33,11 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-	'git'
+	'git' \
+	'maven' \
+	'svn' \
+	'osx-custom' \
+	'misc'
 
 #
 # Editor
