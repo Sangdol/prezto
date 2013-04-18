@@ -37,7 +37,8 @@ zstyle ':prezto:load' pmodule \
 	'maven' \
 	'svn' \
 	'osx-custom' \
-	'misc'
+	'misc' \
+	'local'	# For local pc only
 
 #
 # Editor
