@@ -8,16 +8,19 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias t="cd ~/temp"
+alias dl="cd ~/Downloads"
+alias z="cd ~/.zprezto"
+
 #
 # Shortcuts
 #
-alias t="cd ~/temp"
-alias dl="cd ~/Downloads"
 alias h="history"
 alias vi='vim'
 alias oo='o .'
+alias ackj="ack --ignore-dir=target"	# ack for java
 
-# for frequent uses
+# For frequent uses
 alias gj='gws'
 alias gk='gwd'
 alias ga='gia'
