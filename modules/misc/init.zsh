@@ -15,7 +15,12 @@ alias t="cd ~/temp"
 alias dl="cd ~/Downloads"
 alias h="history"
 alias vi='vim'
-alias oo='open .'
+alias oo='o .'
+
+# for frequent uses
+alias gj='gws'
+alias gk='gwd'
+alias ga='gia'
 
 #
 # functions
@@ -23,9 +28,15 @@ alias oo='open .'
 
 # Python server
 serve() {
-    local port=${1:-8080}
-    python -m SimpleHTTPServer $port > /dev/null 2>&1 &
-    open http://localhost:$port
+		local rand=$((RANDOM+10000))
+    local port=${1:-$rand}
+		python -m SimpleHTTPServer $port > /dev/null 2>&1 &
+		o http://localhost:$port
+}
+
+copy() {
+	# copy without BOM
+	cat $1 | awk '{if(NR==1)sub(/^\xef\xbb\xbf/, "");print}' | pbcopy
 }
 
 # CDPATH
