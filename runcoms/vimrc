@@ -33,8 +33,9 @@ syntax enable
 " Tab settings
 set smarttab
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=2	" for backspace
 set tabstop=2
+set noexpandtab " doesn't make tab to spaces
 
 " Cool tab completion stuff
 set wildmenu
