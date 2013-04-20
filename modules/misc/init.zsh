@@ -27,3 +27,8 @@ serve() {
     python -m SimpleHTTPServer $port > /dev/null 2>&1 &
     open http://localhost:$port
 }
+
+#
+# Etc
+#
+export CDPATH=.:~:~/Projects
