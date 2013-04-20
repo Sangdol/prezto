@@ -33,8 +33,9 @@ syntax enable
 " Tab settings
 set smarttab
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=2	" for backspace
 set tabstop=2
+set noexpandtab " doesn't make tab to spaces
 
 " Cool tab completion stuff
 set wildmenu
@@ -59,6 +60,8 @@ let mapleader=","
 
 " From Vim 7.3, it can yank to and paste from clipboard
 set clipboard=unnamed
+" For x window. From Vim 7.3.74
+set clipboard=unnamedplus
 
 " You should make directories by yourself
 set backup
@@ -223,6 +226,9 @@ nnoremap <silent> zj o<Esc>
 nnoremap <silent> zk O<Esc>
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
+
+" Save with root permission inside Vim
+cmap w!! w !sudo tee > /dev/null %
 "}}}
 
 " OS Specific {{{
