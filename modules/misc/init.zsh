@@ -21,8 +21,10 @@ alias oo='o .'
 alias ackj="ack --ignore-dir=target"	# ack for java
 
 # For frequent uses
-alias gj='gws'
-alias gk='gwd'
+alias gs='git status'	# Override default
+alias gst='git stash'	# Set other alias
+alias gd='gwd'		# Override default
+alias gda='git ls-files'	# Set other alias
 alias ga='gia'
 
 #
