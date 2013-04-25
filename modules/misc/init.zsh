@@ -28,6 +28,11 @@ alias gda='git ls-files'	# Set other alias
 alias ga='gia'
 
 #
+# History
+#
+unsetopt HIST_VERIFY
+
+#
 # functions
 #
 
