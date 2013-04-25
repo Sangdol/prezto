@@ -4,8 +4,13 @@ fi
 
 # Get Screen Shot
 # - Move the latest screen shot file to current location
-gss() {
+get-ss() {
 	local ss_path=$(defaults read com.apple.screencapture location)
 	local latestFile="$(ls -t $ss_path | head -1)"
-	mv "$ss_path/$latestFile" .
+
+	if [ $latestFile ]; then
+		mv "$ss_path/$latestFile" .
+	else
+		echo "There's no file in $ss_path"
+	fi
 }
