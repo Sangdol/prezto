@@ -8,11 +8,12 @@ alias hs="host-toggler stage"
 alias hq="host-toggler qa"
 alias ht="host-toggler dev"
 alias hc="host-toggler custom"
+alias hce="vi $toggler_path/hosts.custom"
 alias hu="$toggler_path/update.sh"		# host updater
 alias hh="cat $toggler_path/current"
 
 # Custom Scripts
-alias deploy='~/scripts/deploy/local/local-deploy.sh'
+alias deploy='~/Projects/localcraft/local-deploy.sh'
 alias ws='~/scripts/sh/watch-say.sh'	#watch say
 
 # Functions
