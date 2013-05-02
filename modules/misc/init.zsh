@@ -20,12 +20,21 @@ alias vi='vim'
 alias oo='o .'
 alias ackj="ack --ignore-dir=target"	# ack for java
 
-# For frequent uses
+#
+# Override
+#
+
+# Git
 alias gs='git status'	# Override default
 alias gst='git stash'	# Set other alias
 alias gd='gwd'		# Override default
 alias gda='git ls-files'	# Set other alias
 alias ga='gia'
+
+# utils
+alias mv='mv -vi'
+alias cp='cp -vi'
+alias rm='rm -vi'
 
 #
 # History
