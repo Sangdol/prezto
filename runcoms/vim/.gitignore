@@ -1,4 +1,6 @@
-# Vim back/temp files
+# Vim backup/temp files
+backup
+swap
 *~
 *.swp
 
