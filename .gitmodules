@@ -7,3 +7,6 @@
 [submodule "modules/completion/external"]
 	path = modules/completion/external
 	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "runcoms/vim/bundle/taglist"]
+	path = runcoms/vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
