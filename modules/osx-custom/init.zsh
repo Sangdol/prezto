@@ -14,3 +14,6 @@ get-ss() {
 		echo "There's no file in $ss_path"
 	fi
 }
+
+# Etc
+alias chrome="/usr/bin/open -a \"/Applications/Google Chrome.app\""
