@@ -59,7 +59,7 @@ mvn-run()
 alias mt="mvn-run test"
 alias mc="mvn-run clean"
 alias mp="mvn-run package"
-alias msp="mc && mp"
+alias mcp="mc && mp"
 alias mps="mvn-run package -Dmaven.test.skip=true"
 alias mcps="mc && mp -Dmaven.test.skip=true"
 alias ms="mvn-run site"
