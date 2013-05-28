@@ -13,3 +13,6 @@
 [submodule "runcoms/vim/bundle/nerdtree"]
 	path = runcoms/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "runcoms/vim/bundle/nerdcommenter"]
+	path = runcoms/vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
