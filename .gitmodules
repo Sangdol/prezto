@@ -16,3 +16,6 @@
 [submodule "runcoms/vim/bundle/nerdcommenter"]
 	path = runcoms/vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "runcoms/vim/bundle/syntastic"]
+	path = runcoms/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
