@@ -7,3 +7,6 @@
 [submodule "modules/completion/external"]
 	path = modules/completion/external
 	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "runcoms/vim/bundle/vim-easymotion"]
+	path = runcoms/vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
