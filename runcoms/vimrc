@@ -137,8 +137,8 @@ func! Paste_on_off()
 endfunc
 
 " Paste Mode!
-nnoremap <silent> <F10> :call Paste_on_off()<CR>
-set pastetoggle=<F10>
+nnoremap <silent> <F9> :call Paste_on_off()<CR>
+set pastetoggle=<F9>
 "}}}
 
 "{{{ Mappings

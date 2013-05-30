@@ -10,3 +10,15 @@
 [submodule "runcoms/vim/bundle/taglist"]
 	path = runcoms/vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "runcoms/vim/bundle/vim-easymotion"]
+	path = runcoms/vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "runcoms/vim/bundle/nerdtree"]
+	path = runcoms/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "runcoms/vim/bundle/nerdcommenter"]
+	path = runcoms/vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "runcoms/vim/bundle/syntastic"]
+	path = runcoms/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
