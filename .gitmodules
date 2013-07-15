@@ -10,6 +10,7 @@
 [submodule "runcoms/vim/bundle/taglist"]
 	path = runcoms/vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+	ignore = dirty
 [submodule "runcoms/vim/bundle/vim-easymotion"]
 	path = runcoms/vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
