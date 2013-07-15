@@ -58,6 +58,12 @@ copy() {
 	cat $1 | awk '{if(NR==1)sub(/^\xef\xbb\xbf/, "");print}' | pbcopy
 }
 
+open_lastest_screen_shot() {
+	if [[ "$OSTYPE" == linux-gnu ]]; then
+		o "$HOME/Pictures/$(ls -tr $HOME/Pictures | tail -1)"
+	fi
+}
+
 #
 # etc
 #
