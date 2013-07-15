@@ -22,3 +22,6 @@
 [submodule "runcoms/vim/bundle/syntastic"]
 	path = runcoms/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "runcoms/vim/bundle/vim-coffee-script"]
+	path = runcoms/vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git

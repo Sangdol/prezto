@@ -8,3 +8,13 @@ How to use
 
 :TlistToggle
 :help taglist
+
+vim-coffee-script
+=================
+
+https://github.com/kchmck/vim-coffee-script
+
+How to use
+----------
+
+
