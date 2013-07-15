@@ -63,4 +63,7 @@ copy() {
 #
 
 # CDPATH
-export CDPATH=.:~:~/Projects
+export CDPATH=".:~:~/Projects"
+
+# HISTORY
+export HISTCONTROL=ignorespace
