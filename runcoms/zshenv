@@ -10,7 +10,9 @@
 #
 
 if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
+  export BROWSER='chrome'
+elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
+	export BROWSER='google-chrome'
 fi
 
 #
