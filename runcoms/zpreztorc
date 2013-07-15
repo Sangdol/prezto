@@ -37,7 +37,7 @@ zstyle ':prezto:load' pmodule \
 	'maven' \
 	'svn' \
 	'osx-custom' \
-	'misc' \ # Custom misc settings
+	'misc' \
 	'gradle' \
 	'local'	# For local pc only
 
