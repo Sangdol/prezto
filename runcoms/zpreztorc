@@ -33,13 +33,13 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-	'git' \
-	'maven' \
-	'svn' \
-	'osx-custom' \
-	'misc' \ # Custom misc settings
-	'gradle' \
-	'local'	# For local pc only
+  'git' \
+  'maven' \
+  'svn' \
+  'osx-custom' \
+  'misc' \
+  'gradle' \
+  'local'
 
 #
 # Editor
