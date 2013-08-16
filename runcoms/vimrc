@@ -40,8 +40,8 @@ set softtabstop=2 " for backspace
 set tabstop=2
 set expandtab " Everybody expand tab thesedays
 
-autocmd FileType python setlocal shiftwidht=4 softtabstop=4 tabstop=4
-autocmd FileType java setlocal shiftwidht=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 " Cool tab completion stuff
 set wildmenu
