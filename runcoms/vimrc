@@ -36,9 +36,9 @@ syntax enable
 " Tab settings
 set smarttab
 set shiftwidth=2
-set softtabstop=2	" for backspace
+set softtabstop=2 " for backspace
 set tabstop=2
-set noexpandtab " doesn't make tab to spaces
+set expandtab " Everybody expand tab thesedays
 
 " Cool tab completion stuff
 set wildmenu
@@ -79,18 +79,18 @@ set fileformats=unix,dos
 set background=dark
 
 if has("gui_running")
-	colorscheme Tomorrow-Night
-	set guioptions-=T " Remove Toolbar
-	set guifont=나눔고딕코딩:h13:cHANGEUL
+  colorscheme Tomorrow-Night
+  set guioptions-=T " Remove Toolbar
+  set guifont=나눔고딕코딩:h13:cHANGEUL
 
-	" Redefine menus for Korean
-	let $LANG = 'ko_KR.UTF-8'
-	source $VIMRUNTIME/delmenu.vim
-	source $VIMRUNTIME/menu.vim
+  " Redefine menus for Korean
+  let $LANG = 'ko_KR.UTF-8'
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
 else
-	colorscheme Tomorrow-Night-Bright
-	" Enable mouse support in terminal
-	set mouse=a
+  colorscheme Tomorrow-Night-Bright
+  " Enable mouse support in terminal
+  set mouse=a
 endif
 
 "Status line
@@ -103,21 +103,21 @@ set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 " Open URL in browser
 function! Browser()
-	let line = getline(".")
-	let line = matchstr(line, "http[^	]*")
-	" Should escape to prevent replaced with registers
-	let line = escape(line, "#?&;|%")
-	if !empty(line)
-		if has("mac")
-			exec "!open ".line
-		elseif has("win32unix")
-			exec "!cygstart ".line
-		elseif has("win32") || has("win64")
-			exec "start ".line
-		endif
-	else
-		echo "No URL found"
-	endif
+  let line = getline(".")
+  let line = matchstr(line, "http[^ ]*")
+  " Should escape to prevent replaced with registers
+  let line = escape(line, "#?&;|%")
+  if !empty(line)
+    if has("mac")
+      exec "!open ".line
+    elseif has("win32unix")
+      exec "!cygstart ".line
+    elseif has("win32") || has("win64")
+      exec "start ".line
+    endif
+  else
+    echo "No URL found"
+  endif
 endfunction
 
 " Open browser
@@ -126,14 +126,14 @@ nnoremap <Leader>w :call Browser()<CR>
 " Paste Toggle
 let paste_mode = 0 " 0 = normal, 1 = paste
 func! Paste_on_off()
-	if g:paste_mode == 0
-			set paste
-		let g:paste_mode = 1
-	else
-		set nopaste
-		let g:paste_mode = 0
-	endif
-	return
+  if g:paste_mode == 0
+      set paste
+    let g:paste_mode = 1
+  else
+    set nopaste
+    let g:paste_mode = 0
+  endif
+  return
 endfunc
 
 " Paste Mode!
@@ -199,8 +199,8 @@ nnoremap <Leader>a :%y<CR>
 " Move between windows by <Leader>number
 let i = 1
 while i <= 9
-	execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-	let i = i + 1
+  execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+  let i = i + 1
 endwhile
 
 " I'm doing this a lot
@@ -232,11 +232,11 @@ cmap w!! w !sudo tee > /dev/null %
 " OS Specific {{{
 
 if has("mac")
-	" From Vim 7.3, it can yank to and paste from clipboard
-	set clipboard=unnamed
+  " From Vim 7.3, it can yank to and paste from clipboard
+  set clipboard=unnamed
 else
-	" For x window. From Vim 7.3.74
-	set clipboard=unnamedplus
+  " For x window. From Vim 7.3.74
+  set clipboard=unnamedplus
 endif
 
 " }}}

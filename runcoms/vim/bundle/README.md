@@ -14,7 +14,7 @@ vim-coffee-script
 
 https://github.com/kchmck/vim-coffee-script
 
-How to use
-----------
+Nerdcommenter
+=============
 
-
+https://github.com/scrooloose/nerdcommenter
