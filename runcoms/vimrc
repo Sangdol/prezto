@@ -161,9 +161,6 @@ nnoremap <silent> <C-t> :tabnew<CR>
 " Edit vimrc
 nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
 
-" Edit bashrc
-nnoremap <silent> <Leader>eb :tabnew<CR>:e ~/.bashrc<CR>
-
 " Up and down are more logical with g..
 nnoremap <silent> k gk
 nnoremap <silent> j gj
@@ -230,6 +227,9 @@ nnoremap <silent> zl a<Space><Left><Esc>
 
 " Save with root permission inside Vim
 cmap w!! w !sudo tee > /dev/null %
+
+" Touch current file
+nnoremap <LEADER>t :!touch %<CR><CR>
 "}}}
 
 " OS Specific {{{
