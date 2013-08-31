@@ -183,7 +183,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 inoremap jk <Esc>
 
 " Easy save
-noremap jj <Esc>:w <CR>
+inoremap jj <Esc>:w <CR>
 
 " Diff shortcut
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
