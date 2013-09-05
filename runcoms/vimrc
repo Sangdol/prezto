@@ -114,6 +114,8 @@ function! Browser()
 			exec "!cygstart ".line
 		elseif has("win32") || has("win64")
 			exec "start ".line
+		elseif has("unix")
+			exec "!google-chrome ".line
 		endif
 	else
 		echo "No URL found"
