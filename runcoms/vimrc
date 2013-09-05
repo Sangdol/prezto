@@ -33,12 +33,15 @@ set foldmethod=marker
 filetype plugin indent on
 syntax enable
 
-" Tab settings
+" Default tab settings
 set smarttab
 set shiftwidth=2
-set softtabstop=2	" for backspace
+set softtabstop=2 " for backspace
 set tabstop=2
-set noexpandtab " doesn't make tab to spaces
+set expandtab " Everybody expand tab thesedays
+
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 " Cool tab completion stuff
 set wildmenu
@@ -104,7 +107,7 @@ set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " Open URL in browser
 function! Browser()
 	let line = getline(".")
-	let line = matchstr(line, "http[^	]*")
+	let line = matchstr(line, "http[^ ]*")
 	" Should escape to prevent replaced with registers
 	let line = escape(line, "#?&;|%")
 	if !empty(line)
@@ -128,14 +131,14 @@ nnoremap <Leader>w :call Browser()<CR>
 " Paste Toggle
 let paste_mode = 0 " 0 = normal, 1 = paste
 func! Paste_on_off()
-	if g:paste_mode == 0
-			set paste
-		let g:paste_mode = 1
-	else
-		set nopaste
-		let g:paste_mode = 0
-	endif
-	return
+  if g:paste_mode == 0
+      set paste
+    let g:paste_mode = 1
+  else
+    set nopaste
+    let g:paste_mode = 0
+  endif
+  return
 endfunc
 
 " Paste Mode!
@@ -184,6 +187,9 @@ nnoremap <silent> <Leader>n :noh<CR>
 " Easy escape
 inoremap jk <Esc>
 
+" Easy save
+inoremap jj <Esc>:w <CR>
+
 " Diff shortcut
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
@@ -201,8 +207,8 @@ nnoremap <Leader>a :%y<CR>
 " Move between windows by <Leader>number
 let i = 1
 while i <= 9
-	execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-	let i = i + 1
+  execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+  let i = i + 1
 endwhile
 
 " I'm doing this a lot
@@ -229,16 +235,19 @@ nnoremap <silent> zl a<Space><Left><Esc>
 
 " Save with root permission inside Vim
 cmap w!! w !sudo tee > /dev/null %
+
+" Touch current file
+nnoremap <LEADER>t :!touch %<CR><CR>
 "}}}
 
 " OS Specific {{{
 
 if has("mac")
-	" From Vim 7.3, it can yank to and paste from clipboard
-	set clipboard=unnamed
+  " From Vim 7.3, it can yank to and paste from clipboard
+  set clipboard=unnamed
 else
-	" For x window. From Vim 7.3.74
-	set clipboard=unnamedplus
+  " For x window. From Vim 7.3.74
+  set clipboard=unnamedplus
 endif
 
 " }}}

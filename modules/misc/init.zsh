@@ -82,6 +82,19 @@ how_old() {
 	echo $((current_time - last_modified))
 }
 
+watch-vi() {
+  # When edit a file with vi, it makes 'created' and 'deleted' event and
+  # when touch a file, it makes 'modified' event.
+  # This function capture only 'created' and 'modified' event to run command only once.
+  watchmedo shell-command \
+  --patterns="$1" \
+  --command="if [ \"\${watch_event_type}\" == \"created\" -o \
+                  \"\${watch_event_type}\" == \"modified\" ]; \
+              then $2; \
+            fi" \
+  .
+}
+
 #
 # etc
 #
@@ -93,3 +106,6 @@ export CDPATH=.:~:~/Projects
 if [[ "$OSTYPE" == linux-gnu ]]; then
 	alias trash='trash-put'
 fi
+
+# HISTORY
+export HISTCONTROL=ignorespace
