@@ -20,6 +20,12 @@ alias vi='vim'
 alias oo='o .'
 alias ackj="ack --ignore-dir=target"	# ack for java
 
+# Mobile dev(Ubuntu)
+export PATH=$PATH:/opt/adt/sdk/platform-tools
+alias adb-start="adb forward tcp:9222 localabstract:chrome_devtools_remote"
+alias adb-kill="adb kill-server"
+alias ap-start="sudo hostapd /etc/hostapd/hostapd.conf"
+
 #
 # Override
 #
@@ -64,9 +70,26 @@ open_lastest_screen_shot() {
 	fi
 }
 
+tellme() {
+	if [[ "$OSTYPE" == linux-gnu ]]; then
+		echo "notify-send '$1'"
+	fi
+}
+
+how_old() {
+	last_modified=$(stat --format="%Y" "$1")
+	current_time=$(date +'%s')
+	echo $((current_time - last_modified))
+}
+
 #
 # etc
 #
 
 # CDPATH
 export CDPATH=.:~:~/Projects
+
+# Just ubuntu
+if [[ "$OSTYPE" == linux-gnu ]]; then
+	alias trash='trash-put'
+fi
