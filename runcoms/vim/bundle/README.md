@@ -9,6 +9,11 @@ How to use
 :TlistToggle
 :help taglist
 
+Requirements
+------------
+
+exuberant-ctags
+
 vim-coffee-script
 =================
 
