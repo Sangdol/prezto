@@ -10,7 +10,7 @@ alias -- -="cd -"
 
 alias t="cd ~/temp"
 alias dl="cd ~/Downloads"
-alias z="cd ~/.zprezto"
+alias zp="cd ~/.zprezto"
 
 #
 # Shortcuts
@@ -18,7 +18,7 @@ alias z="cd ~/.zprezto"
 alias h="history"
 alias vi='vim'
 alias oo='o .'
-alias ackj="ack --ignore-dir=target"	# ack for java
+alias ackj="ack --ignore-dir=target"  # ack for java
 
 # Mobile dev(Ubuntu)
 export PATH=$PATH:/opt/adt/sdk/platform-tools
@@ -31,10 +31,10 @@ alias ap-start="sudo hostapd /etc/hostapd/hostapd.conf"
 #
 
 # Git
-alias gs='git status'	# Override default
-alias gst='git stash'	# Set other alias
-alias gd='gwd'		# Override default
-alias gda='git ls-files'	# Set other alias
+alias gs='git status' # Override default
+alias gst='git stash' # Set other alias
+alias gd='gwd'    # Override default
+alias gda='git ls-files'  # Set other alias
 alias ga='gia'
 
 # utils
@@ -53,33 +53,35 @@ unsetopt HIST_VERIFY
 
 # Python server
 serve() {
-		local rand=$((RANDOM+10000))
+    local rand=$((RANDOM+10000))
     local port=${1:-$rand}
-		python -m SimpleHTTPServer $port > /dev/null 2>&1 &
-		o http://localhost:$port
+    python -m SimpleHTTPServer $port > /dev/null 2>&1 &
+    o http://localhost:$port
 }
 
 copy() {
-	# copy without BOM
-	cat $1 | awk '{if(NR==1)sub(/^\xef\xbb\xbf/, "");print}' | pbcopy
+  # copy without BOM
+  cat $1 | awk '{if(NR==1)sub(/^\xef\xbb\xbf/, "");print}' | pbcopy
 }
 
 open_lastest_screen_shot() {
-	if [[ "$OSTYPE" == linux-gnu ]]; then
-		o "$HOME/Pictures/$(ls -tr $HOME/Pictures | tail -1)"
-	fi
+  if [[ "$OSTYPE" == linux-gnu ]]; then
+    o "$HOME/Pictures/$(ls -tr $HOME/Pictures | tail -1)"
+  fi
 }
 
 tellme() {
-	if [[ "$OSTYPE" == linux-gnu ]]; then
-		echo "notify-send '$1'"
-	fi
+  if [[ "$OSTYPE" == linux-gnu ]]; then
+    echo "notify-send '$1'"
+  elif [[ "$OSTYPE" == darwin* ]]; then
+    echo "terminal-notifier -message '$1'"
+  fi
 }
 
 how_old() {
-	last_modified=$(stat --format="%Y" "$1")
-	current_time=$(date +'%s')
-	echo $((current_time - last_modified))
+  last_modified=$(stat --format="%Y" "$1")
+  current_time=$(date +'%s')
+  echo $((current_time - last_modified))
 }
 
 watch-vi() {
@@ -104,7 +106,7 @@ export CDPATH=.:~:~/Projects
 
 # Just ubuntu
 if [[ "$OSTYPE" == linux-gnu ]]; then
-	alias trash='trash-put'
+  alias trash='trash-put'
 fi
 
 # HISTORY
