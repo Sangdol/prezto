@@ -126,7 +126,7 @@ function! Browser()
 endfunction
 
 " Open browser
-nnoremap <Leader>w :call Browser()<CR>
+nnoremap <Leader>b :call Browser()<CR>
 
 " Paste Toggle
 let paste_mode = 0 " 0 = normal, 1 = paste
@@ -187,9 +187,6 @@ nnoremap <silent> <Leader>n :noh<CR>
 " Easy escape
 inoremap jk <Esc>
 
-" Easy save
-inoremap jj <Esc>:w <CR>
-
 " Diff shortcut
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
@@ -235,6 +232,8 @@ nnoremap <silent> zl a<Space><Left><Esc>
 
 " Save with root permission inside Vim
 cmap w!! w !sudo tee > /dev/null %
+
+nnoremap <leader>w :w<CR>
 
 " Touch current file
 nnoremap <LEADER>t :!touch %<CR><CR>
