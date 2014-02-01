@@ -113,10 +113,6 @@ function! Browser()
 	if !empty(line)
 		if has("mac")
 			exec "!open ".line
-		elseif has("win32unix")
-			exec "!cygstart ".line
-		elseif has("win32") || has("win64")
-			exec "start ".line
 		elseif has("unix")
 			exec "!google-chrome ".line
 		endif
