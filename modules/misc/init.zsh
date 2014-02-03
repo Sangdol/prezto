@@ -61,7 +61,7 @@ serve() {
 
 copy() {
   # copy without BOM
-  cat $1 | awk '{if(NR==1)sub(/^\xef\xbb\xbf/, "");print}' | pbcopy
+  cat "$1" | awk '{if(NR==1)sub(/^\xef\xbb\xbf/, "");print}' | pbcopy
 }
 
 open_lastest_screen_shot() {
