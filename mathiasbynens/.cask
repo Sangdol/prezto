@@ -14,6 +14,8 @@ installcask firefox
 installcask spring-tool-suite
 installcask intellij-idea-ultimate
 installcask sourcetree
+installcask mysql-workbench
+installcask sequel-pro
 
 installcask dropbox
 installcask google-chrome
