@@ -2,6 +2,7 @@
 
 # Install native apps
 brew tap phinze/homebrew-cask
+brew tap caskroom/versions
 brew install brew-cask
 
 function installcask() {
@@ -9,13 +10,17 @@ function installcask() {
 }
 
 installcask alfred
+brew cask alfred link
+
 installcask bettertouchtool
 installcask firefox
-installcask spring-tool-suite
 installcask intellij-idea-ultimate
-installcask sourcetree
 installcask mysql-workbench
 installcask sequel-pro
+installcask keyremap4macbook
+installcask squidman
+installcask hipchat
+installcask shortcat
 
 installcask dropbox
 installcask google-chrome

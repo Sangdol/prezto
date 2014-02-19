@@ -21,18 +21,13 @@ install wget --enable-iri
 install vim --override-system-vi
 tap homebrew/dupes
 install homebrew/dupes/grep
-tap josegonzalez/homebrew-php
-install php55
 
 # Install other useful binaries
 install ack
 install git
-install lynx
 install node
 install rename
-install rhino
 install tree
-install webkit2png
 
 # My
 install ranger
@@ -40,6 +35,11 @@ install tig
 install emacs
 install trash
 install maven
+install tomcat
+install redis
+install elasticsearch
+install libpng
+install libjpeg
 
 tap homebrew/versions
 install mysql
