@@ -21,6 +21,7 @@ installcask keyremap4macbook
 installcask squidman
 installcask hipchat
 installcask shortcat
+installcask sourcetree
 
 installcask dropbox
 installcask google-chrome
