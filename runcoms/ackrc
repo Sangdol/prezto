@@ -1,0 +1,38 @@
+# General Ack Settings
+#
+# References
+# - https://github.com/claytron/dotfiles/blob/master/.ackrc
+# - https://gist.github.com/kevinold/4749656
+####################################################################
+
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+
+# Ack Type Settings
+####################################################################
+
+# Always sort the files
+--sort−files
+
+# Always color, even if piping to a another program
+--color
+
+# Use "less −r" as my pager
+--pager
+less -r
+
+# ignore dirs
+--ignore-dir=.idea/
+--ignore-dir=node_modules/
+--ignore-dir=target
+
+# make sure ack knows how to search common filetypes
+--type-add=css=scss
+--type-set=coffeescript=.coffee
+--type-set=coffee=.coffee
+--type-set=plaintext=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
+--type-set=csv=.txt,.csv,.tsv
+--type-set=jade=.jade
+--type-set=json=.json
