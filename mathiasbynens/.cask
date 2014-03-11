@@ -22,6 +22,7 @@ installcask squidman
 installcask hipchat
 installcask shortcat
 installcask sourcetree
+installcask livereload
 
 installcask dropbox
 installcask google-chrome
