@@ -19,6 +19,7 @@ alias h="history"
 alias vi='vim'
 alias oo='o .'
 alias ackj="ack --ignore-dir=target"  # ack for java
+alias datep="TZ=America/Los_Angeles date" # PST
 
 # Mobile dev(Ubuntu)
 export PATH=$PATH:/opt/adt/sdk/platform-tools
