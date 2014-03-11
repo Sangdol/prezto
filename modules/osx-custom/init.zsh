@@ -16,4 +16,4 @@ get-ss() {
 }
 
 # Etc
-alias chrome="/usr/bin/open -a \"/Applications/Google Chrome.app\""
+alias chrome="/usr/bin/open -a \"$HOME/Applications/Google Chrome.app\""
