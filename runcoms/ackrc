@@ -13,9 +13,6 @@
 # Ack Type Settings
 ####################################################################
 
-# Always sort the files
---sort−files
-
 # Always color, even if piping to a another program
 --color
 
