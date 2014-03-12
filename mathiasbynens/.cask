@@ -23,6 +23,7 @@ installcask hipchat
 installcask shortcat
 installcask sourcetree
 installcask livereload
+installcask free-ruler
 
 installcask dropbox
 installcask google-chrome
