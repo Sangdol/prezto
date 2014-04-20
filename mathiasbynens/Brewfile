@@ -41,6 +41,7 @@ install elasticsearch
 install libpng
 install libjpeg
 install terminal-notifier
+install fasd
 
 tap homebrew/versions
 install mysql
