@@ -109,6 +109,10 @@ watch-vi() {
   .
 }
 
+kill-tomcat() {
+  ps -ef | grep tomcat | grep Bootstrap | awk '{print $2}' | xargs kill -9
+}
+
 #
 # etc
 #
