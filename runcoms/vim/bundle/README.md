@@ -23,3 +23,13 @@ Nerdcommenter
 =============
 
 https://github.com/scrooloose/nerdcommenter
+
+Nerdtree
+========
+
+https://github.com/scrooloose/nerdtree
+
+How to use
+----------
+
+:NERDTreeToggle
