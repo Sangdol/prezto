@@ -114,6 +114,14 @@ kill-tomcat() {
   ps -ef | grep tomcat | grep Bootstrap | awk '{print $2}' | xargs kill -9
 }
 
+pp() {
+  print -l **/"$1"
+}
+
+go() {
+  cd "$(dirname "$(pp "$1" | head -1)")"
+}
+
 #
 # etc
 #
