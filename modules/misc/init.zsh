@@ -54,6 +54,7 @@ alias ga='gia'
 alias mv='mv -vi'
 alias cp='cp -vi'
 alias rm='rm -vi'
+alias trash='trash -v'
 
 #
 # History
@@ -63,6 +64,10 @@ unsetopt HIST_VERIFY
 #
 # functions
 #
+
+md () {
+  mkdir -p "$@" && cd "$@"
+}
 
 # Python server
 serve() {
