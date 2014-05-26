@@ -43,6 +43,7 @@ install libjpeg
 install terminal-notifier
 install fasd
 install grc # to use https://github.com/nitso/colour-mysql-console
+install mongodb
 
 tap homebrew/versions
 install mysql
