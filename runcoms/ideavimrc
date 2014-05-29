@@ -1,0 +1,4 @@
+nnoremap <silent> zj o<Esc>
+nnoremap <silent> zk O<Esc>
+nnoremap <silent> zh i<Space><Right><Esc>
+nnoremap <silent> zl a<Space><Left><Esc>
