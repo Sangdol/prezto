@@ -65,6 +65,10 @@ unsetopt HIST_VERIFY
 # functions
 #
 
+ggo () {
+  git branch | grep "$1" | xargs git checkout
+}
+
 md () {
   mkdir -p "$@" && cd "$@"
 }
