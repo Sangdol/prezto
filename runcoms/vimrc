@@ -181,6 +181,9 @@ map n nzz
 " Turn off highlight
 nnoremap <silent> <Leader>n :noh<CR>
 
+" Easy escape
+inoremap jk <Esc>
+
 " Diff shortcut
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
