@@ -124,11 +124,19 @@ kill-tomcat() {
 }
 
 pp() {
-  print -l **/"$1"
+  print -l **/*"$1"*
 }
 
-go() {
+gopp() {
   cd "$(dirname "$(pp "$1" | head -1)")"
+}
+
+opp() {
+  open "$(pp "$1")"
+}
+
+cppp() {
+  cp "$(pp "$1")" "$2"
 }
 
 #
