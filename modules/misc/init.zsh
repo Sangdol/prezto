@@ -127,12 +127,20 @@ pp() {
   print -l **/*"$1"*
 }
 
-gopp() {
-  cd "$(dirname "$(pp "$1" | head -1)")"
+ppp() {
+  dirname "$(pp "$1" | head -1)"
+}
+
+goppp() {
+  cd "$(ppp "$1")"
 }
 
 opp() {
-  open "$(pp "$1")"
+  open "$(pp "$1" | head -1)"
+}
+
+oppp() {
+  open "$(ppp "$1")"
 }
 
 cppp() {
