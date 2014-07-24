@@ -40,6 +40,7 @@ set shiftwidth=2
 set softtabstop=2 " for backspace
 set tabstop=2
 set expandtab " Everybody expand tab thesedays
+set autoindent
 
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
@@ -49,7 +50,6 @@ set wildmenu
 set wildmode=list:longest,full
 
 set number " always show line numbers
-set autoindent " always set autoindenting on
 
 " Search settings
 set ignorecase

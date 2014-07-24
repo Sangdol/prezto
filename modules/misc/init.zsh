@@ -32,6 +32,7 @@ alias h="history"
 alias vi='vim'
 alias oo='o .'
 alias datep="TZ=America/Los_Angeles date" # PST
+alias c="gcal ."
 
 # Mobile dev(Ubuntu)
 export PATH=$PATH:/opt/adt/sdk/platform-tools
@@ -49,6 +50,9 @@ alias gst='git stash' # Set other alias
 alias gd='gwd'    # Override default
 alias gda='git ls-files'  # Set other alias
 alias ga='gia'
+alias gpu='git pull --rebase'
+alias gsh='git show @'
+alias gt='git tag'
 
 # utils
 alias mv='mv -vi'
@@ -161,3 +165,4 @@ fi
 
 # HISTORY
 export HISTCONTROL=ignorespace
+
