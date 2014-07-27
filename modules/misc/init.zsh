@@ -100,7 +100,7 @@ tellme() {
   if [[ "$OSTYPE" == linux-gnu ]]; then
     echo "notify-send '$1'"
   elif [[ "$OSTYPE" == darwin* ]]; then
-    echo "terminal-notifier -message '$1'"
+    echo "growlnotify -ms '$1'"
   fi
 }
 
