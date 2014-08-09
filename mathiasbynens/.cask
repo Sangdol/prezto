@@ -34,3 +34,4 @@ installcask sublime-text
 installcask virtualbox
 installcask vlc
 installcask f-lux
+installcask keymo
