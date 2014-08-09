@@ -53,6 +53,7 @@ alias ga='gia'
 alias gpu='git pull --rebase'
 alias gsh='git show @'
 alias gt='git tag'
+alias grh='git reset @'
 
 # utils
 alias mv='mv -vi'
