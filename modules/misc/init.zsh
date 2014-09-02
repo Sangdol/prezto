@@ -79,6 +79,16 @@ md () {
   mkdir -p "$@" && cd "$@"
 }
 
+# ack and
+acka () {
+  for var in "$@"
+  do
+    cmd="$cmd""ack ""$var"" | "
+  done
+  cmd="${cmd:0: -2}"
+  eval "$cmd"
+}
+
 # Python server
 serve() {
     local rand=$((RANDOM+10000))
