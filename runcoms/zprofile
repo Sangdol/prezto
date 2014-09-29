@@ -75,3 +75,7 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+#
+# Custom
+#
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
