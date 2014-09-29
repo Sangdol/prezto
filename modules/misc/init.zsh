@@ -33,6 +33,7 @@ alias vi='vim'
 alias oo='o .'
 alias datep="TZ=America/Los_Angeles date" # PST
 alias c="gcal ."
+alias d="date"
 
 # Mobile dev(Ubuntu)
 export PATH=$PATH:/opt/adt/sdk/platform-tools
