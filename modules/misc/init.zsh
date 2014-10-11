@@ -57,6 +57,14 @@ alias gt='git tag'
 alias grh='git reset @'
 alias gbr='git blame'
 
+ggo () {
+  git branch | grep "$1" | xargs git checkout
+}
+
+gbrs () {
+  git show $(git blame "$1" -L "$2" | awk '{print $1}')
+}
+
 # utils
 alias mv='mv -vi'
 alias cp='cp -vi'
@@ -71,10 +79,6 @@ unsetopt HIST_VERIFY
 #
 # functions
 #
-
-ggo () {
-  git branch | grep "$1" | xargs git checkout
-}
 
 md () {
   mkdir -p "$@" && cd "$@"
