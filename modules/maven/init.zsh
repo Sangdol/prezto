@@ -43,7 +43,7 @@ mvn-color()
 }
 
 # Override the mvn command with the colorized one.
-alias mvn="mvn-color"
+alias mvn="mvn-color -Duser.timezone=UTC"
 
 #
 # shortcuts. Idea from http://trumaze.blogspot.kr/2011/03/maven-aliases-for-bash.html
