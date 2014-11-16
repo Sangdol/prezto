@@ -3,15 +3,25 @@
 # References
 # - https://github.com/claytron/dotfiles/blob/master/.ackrc
 # - https://gist.github.com/kevinold/4749656
+#
+# Useful options
+# -l : show only file names
+# -f : don't search inside of file (works like print -l in zsh)
+#
+# Usages
+# * find files with more than a word
+#   * ack 'first' $(ack -l 'second')
 ####################################################################
 
-# only search with case sensitivity if there is mixed case
+# Only search with case sensitivity if there is mixed case
 --smart-case
-# follow symlinks
+
+# Follow symlinks
 --follow
 
-# Ack Type Settings
-####################################################################
+# Always show line numbers
+# http://superuser.com/questions/839010/show-line-number-when-search-a-single-file
+--with-filename
 
 # Always color, even if piping to a another program
 --color
@@ -20,12 +30,12 @@
 --pager
 less -r
 
-# ignore dirs
+# Ignore dirs
 --ignore-dir=.idea/
 --ignore-dir=node_modules/
 --ignore-dir=target
 
-# make sure ack knows how to search common filetypes
+# Make sure ack knows how to search common filetypes
 --type-add=css=scss
 --type-set=coffeescript=.coffee
 --type-set=coffee=.coffee
