@@ -52,10 +52,13 @@ alias gd='gwd'    # Override default
 alias gda='git ls-files'  # Set other alias
 alias ga='gia'
 alias gpu='git pull --rebase'
-alias gsh='git show @'
 alias gt='git tag'
 alias grh='git reset @'
 alias gbr='git blame'
+
+gsh () {
+  git show ${1-@}
+}
 
 ggo () {
   git branch | grep "$1" | xargs git checkout
@@ -63,6 +66,10 @@ ggo () {
 
 gbrs () {
   git show $(git blame "$1" -L "$2" | awk '{print $1}')
+}
+
+gbrr () {
+  git rebase -i "$(git blame "$1" -L "$2" | awk '{print $1}' | head -1)~"
 }
 
 # utils
