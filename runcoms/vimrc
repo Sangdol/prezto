@@ -24,9 +24,15 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'tpope/vim-markdown.git'
 
 " Plugin configs
 let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+" https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
+" https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
+let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml']
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,6 +48,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 " }}}
 
 " Auto Commands {{{
@@ -230,8 +237,14 @@ nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
 nnoremap <silent> <leader>do :diffoff<CR>
 
+" Delete all
+nnoremap <silent> <Leader>dd ggdG
+
 " Open help page about a word under cusor
 nnoremap <leader>h :h <C-r><C-w><CR>
+
+" For NerdCommenter
+nmap <silent> <C-_> <Leader>c<Space>
 
 " Shift tab default action
 inoremap <S-Tab> <Esc><<i
@@ -239,14 +252,24 @@ inoremap <S-Tab> <Esc><<i
 " Yank all
 nnoremap <Leader>a :%y<CR>
 
-" Move between windows by <Leader>number
+" Move between windows
 let i = 1
 while i <= 9
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
   let i = i + 1
 endwhile
 
-" I'm doing this a lot
+" Easy buffer switch
+nnoremap <silent> <Leader>l :b#<CR>
+nnoremap <Leader>v :vert sb<SPACE>
+nnoremap <C-l> :ls<CR>:b<SPACE>
+let i = 1
+while i <= 9
+  execute 'nnoremap ;' . i . ' :b' . i . '<CR>'
+  let i = i + 1
+endwhile
+
+" Mistake proofing
 cnoremap W<CR> w<CR>
 cnoremap Q<CR> q<CR>
 cnoremap Q!<CR> q!<CR>
@@ -275,6 +298,9 @@ nnoremap <leader>w :w<CR>
 
 " Touch current file
 nnoremap <LEADER>t :!touch %<CR><CR>
+
+" Clock
+nnoremap <Leader>da :!date<CR>
 "}}}
 
 " OS Specific {{{
