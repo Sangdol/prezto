@@ -2,7 +2,6 @@ nnoremap <silent> zj o<Esc>
 nnoremap <silent> zk O<Esc>
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
-vnoremap y "*y
-vnoremap Y "*Y
 inoremap jk <Esc>
 set incsearch
+set clipboard=unnamed
