@@ -54,7 +54,7 @@ alias ga='gia'
 alias gpu='git pull --rebase'
 alias gt='git tag'
 alias grh='git reset @'
-alias gbr='git blame'
+alias ge='git blame'
 
 gsh () {
   git show ${1-@}
@@ -64,12 +64,30 @@ ggo () {
   git branch | grep "$1" | xargs git checkout
 }
 
-gbrs () {
-  git show $(git blame "$1" -L "$2" | awk '{print $1}')
+# blamE sha
+gesh () {
+  git blame -L"$2",+1 "${3-HEAD}~" -- "$1" | awk '{print $1}'
 }
 
-gbrr () {
-  git rebase -i "$(git blame "$1" -L "$2" | awk '{print $1}' | head -1)~"
+# blamE Show
+ges () {
+  git show $(gesh "$@")
+}
+
+# blamE Rebase
+ger () {
+  git rebase -i "$(gesh "$@")~"
+}
+
+gh () {
+  # Extract account name and repo name from "...:{account-name}/{repo-name}.git"
+  repo_path=$(git config --get remote.origin.url | perl -n -e '/:(.*)\.git/ && print $1')
+
+  if [ ! -z "$2" ];then
+    line="#L$2"
+  fi
+
+  open "https://github.com/$repo_path/tree/SF/$(pp "$1" | head -1)$line"
 }
 
 # utils
@@ -151,26 +169,37 @@ kill-tomcat() {
   ps -ef | grep tomcat | grep Bootstrap | awk '{print $2}' | xargs kill -9
 }
 
+# print
 pp() {
-  print -l **/*"$1"*
+  print -l **/"$1"*
 }
 
+# print parent
 ppp() {
   dirname "$(pp "$1" | head -1)"
 }
 
+# go parent
 goppp() {
   cd "$(ppp "$1")"
 }
 
+# open
 opp() {
   open "$(pp "$1" | head -1)"
 }
 
+# open parent
 oppp() {
   open "$(ppp "$1")"
 }
 
+# open all in the parent
+oappp() {
+  open "$(ppp "$1")"/*
+}
+
+# copy
 cppp() {
   cp "$(pp "$1")" "$2"
 }
