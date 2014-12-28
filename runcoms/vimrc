@@ -3,6 +3,10 @@
 "
 
 " Vundle {{{
+"
+" Install
+" $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -183,7 +187,10 @@ func! Paste_on_off()
 endfunc
 
 " Run current file
-nnoremap <F5> :w<CR> :!./%
+nnoremap <F5> :w<CR> :!./%<CR>
+
+" Run current line
+nnoremap <F4> :.w !bash<CR>
 
 " Paste Mode!
 nnoremap <silent> <F9> :call Paste_on_off()<CR>
@@ -260,7 +267,7 @@ while i <= 9
 endwhile
 
 " Easy buffer switch
-nnoremap <silent> <Leader>l :b#<CR>
+nnoremap <silent> <Leader>; :b#<CR>
 nnoremap <Leader>v :vert sb<SPACE>
 nnoremap <C-l> :ls<CR>:b<SPACE>
 let i = 1
