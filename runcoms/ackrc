@@ -35,6 +35,9 @@ less -r
 --ignore-dir=node_modules/
 --ignore-dir=target
 
+# Ignore files
+--ignore-file=match:/.*min.*(js|css)$/
+
 # Make sure ack knows how to search common filetypes
 --type-add=css=scss
 --type-set=coffeescript=.coffee
@@ -43,3 +46,8 @@ less -r
 --type-set=csv=.txt,.csv,.tsv
 --type-set=jade=.jade
 --type-set=json=.json
+--type-set=less=.less
+--type-set=view:match:/.*(jsp|vm)$/
+--type-set=java=.java
+--type-set=js=.js
+--type-set=vm=.vm
