@@ -34,6 +34,7 @@ alias oo='o .'
 alias datep="TZ=America/Los_Angeles date" # PST
 alias c="gcal ."
 alias d="date"
+alias tailf="tail -f"
 
 # Mobile dev(Ubuntu)
 export PATH=$PATH:/opt/adt/sdk/platform-tools
@@ -61,7 +62,7 @@ gsh () {
 }
 
 ggo () {
-  git branch | grep "$1" | xargs git checkout
+  git branch | grep "$1" | head -1 | xargs git checkout
 }
 
 # blamE sha
@@ -77,6 +78,11 @@ ges () {
 # blamE Rebase
 ger () {
   git rebase -i "$(gesh "$@")~"
+}
+
+# pull target branch and rebase
+grp () {
+  git checkout "$1" && git pull && git checkout - && git rebase "$1"
 }
 
 gh () {
@@ -170,6 +176,10 @@ kill-tomcat() {
 }
 
 # print
+ppcmd () {
+  echo 'pp ppp goppp opp oppp oappp cppp'
+}
+
 pp() {
   print -l **/"$1"*
 }
@@ -211,11 +221,11 @@ cppp() {
 # CDPATH
 export CDPATH=.:~:~/Projects
 
-# Just ubuntu
+# Just for Ubuntu
 if [[ "$OSTYPE" == linux-gnu ]]; then
   alias trash='trash-put'
+  alias ack='ack-grep'
 fi
 
 # HISTORY
 export HISTCONTROL=ignorespace
-
