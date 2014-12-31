@@ -29,6 +29,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'tpope/vim-markdown.git'
+Plugin 'mileszs/ack.vim'
 
 " Plugin configs
 let g:auto_save = 1  " enable AutoSave on Vim startup
