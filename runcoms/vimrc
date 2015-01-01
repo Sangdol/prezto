@@ -7,7 +7,6 @@
 " Install
 " $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -22,7 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Optional plugins
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'  " :h easymotion.txt
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
@@ -34,6 +33,10 @@ Plugin 'mileszs/ack.vim'
 " autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+" easymotion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1 " US layout
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
