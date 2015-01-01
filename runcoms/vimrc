@@ -31,7 +31,7 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'tpope/vim-markdown.git'
 Plugin 'mileszs/ack.vim'
 
-" Plugin configs
+" autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
@@ -66,6 +66,9 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Improve syntax highlighting
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" for html close tag shortcut
+autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
 
 "}}}
 
@@ -306,6 +309,10 @@ nnoremap <LEADER>t :!touch %<CR><CR>
 
 " Clock
 nnoremap <Leader>da :!date<CR>
+
+" close tag
+inoremap <Leader>/ </<C-X><C-O>
+
 "}}}
 
 " OS Specific {{{
