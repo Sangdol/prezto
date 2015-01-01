@@ -4,9 +4,3 @@
 # http://superuser.com/questions/635308/how-to-have-an-application-closed-on-lid-close-in-os-x
 #
 # Don't forget to add the execute permission on this file
-
-kill-tomcat () {
-  ps -ef | grep tomcat | grep Bootstrap | awk '{print $2}' | xargs kill -9
-}
-
-kill-tomcat
