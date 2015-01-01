@@ -65,6 +65,11 @@ ggo () {
   git branch | grep "$1" | head -1 | xargs git checkout
 }
 
+# git rebase non interactive
+grni () {
+  GIT_SEQUENCE_EDITOR="sed -ie 's/^pick /e /'" git rebase -i "$@"
+}
+
 # blamE sha
 gesh () {
   git blame -L"$2",+1 "${3-HEAD}~" -- "$1" | awk '{print $1}'
