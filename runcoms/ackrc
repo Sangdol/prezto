@@ -37,6 +37,7 @@ less -r
 
 # Ignore files
 --ignore-file=match:/.*min.*(js|css)$/
+--ignore-file=match:/.*sdk.*(js)$/
 
 # Make sure ack knows how to search common filetypes
 --type-add=css=scss
