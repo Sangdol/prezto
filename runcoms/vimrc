@@ -265,12 +265,12 @@ while i <= 9
 endwhile
 
 " Easy buffer switch
-nnoremap <silent> <Leader>; :b#<CR>
+nnoremap <silent> <C-\> :b#<CR>
 nnoremap <Leader>v :vert sb<SPACE>
 nnoremap <C-l> :ls<CR>:b<SPACE>
 let i = 1
 while i <= 9
-  execute 'nnoremap ;' . i . ' :b' . i . '<CR>'
+  execute 'nnoremap \' . i . ' :b' . i . '<CR>'
   let i = i + 1
 endwhile
 
