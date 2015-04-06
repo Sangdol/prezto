@@ -195,7 +195,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-SCREENSHOTS_PATH="${HOME}/Desktop/screenshots"
+SCREENSHOTS_PATH="${HOME}/Documents/screenshots"
 mkdir -p "$SCREENSHOTS_PATH"
 defaults write com.apple.screencapture location -string "$SCREENSHOTS_PATH"
 
@@ -300,7 +300,7 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+#defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
