@@ -29,12 +29,14 @@ alias v='f -e vim' # quick opening files with vim
 # Shortcuts
 #
 alias h="history"
-alias vi='vim'
 alias oo='o .'
-alias datep="TZ=America/Los_Angeles date" # PST
+alias pdate="TZ=America/Los_Angeles date" # PST
 alias c="gcal ."
 alias d="date"
 alias tailf="tail -f"
+alias misc="vi ~/.zprezto/modules/misc/init.zsh"
+alias loc="vi ~/.zprezto/modules/local/init.zsh"
+alias cl="watch -t -n1 date" # dynamic clock
 
 # Mobile dev(Ubuntu)
 export PATH=$PATH:/opt/adt/sdk/platform-tools
@@ -56,6 +58,7 @@ alias gpu='git pull --rebase'
 alias gt='git tag'
 alias grh='git reset @'
 alias ge='git blame'
+alias g-='git checkout -'
 
 gsh () {
   git show ${1-@}
@@ -70,20 +73,15 @@ grni () {
   GIT_SEQUENCE_EDITOR="sed -ie 's/^pick /e /'" git rebase -i "$@"
 }
 
-# blamE sha
-gesh () {
-  git blame -L"$2",+1 "${3-HEAD}~" -- "$1" | awk '{print $1}'
-}
-
 # blamE Show
 ges () {
-  git show $(gesh "$@")
+  git show $(git blame -L"$2",+1 "$1" | awk '{print $1}')
 }
 
-# blamE Rebase
-ger () {
-  git rebase -i "$(gesh "$@")~"
-}
+# bash version
+#ges () {
+  #git show $(git blame -L"$2",+1 "$(git ls-files "$1")" | awk '{print $1}')
+#}
 
 # pull target branch and rebase
 grp () {
@@ -98,7 +96,9 @@ gh () {
     line="#L$2"
   fi
 
-  open "https://github.com/$repo_path/tree/SF/$(pp "$1" | head -1)$line"
+  URL="https://github.com/$repo_path/tree/SF/$(git ls-files "$1" | head -1)$line"
+  echo "open $URL"
+  open "$URL"
 }
 
 # utils
@@ -115,6 +115,29 @@ unsetopt HIST_VERIFY
 #
 # functions
 #
+
+# edit temp
+opentemp () {
+  TEMP_DIR="$HOME/Documents/temp"
+  if [ ! -d "$TEMP_DIR" ];then
+    mkdir "$TEMP_DIR"
+  fi
+
+  vim "$TEMP_DIR/$(date +"%y%m%d-%H%M").md"
+}
+
+vi () {
+  if [ $# -eq 0 ]; then
+    opentemp
+  else
+    vim $*
+  fi
+}
+
+# pretty(python) json
+pjson () {
+  python -m json.tool
+}
 
 md () {
   mkdir -p "$@" && cd "$@"
@@ -163,6 +186,18 @@ how_old() {
   echo $((current_time - last_modified))
 }
 
+# watchmedo https://github.com/gorakhargosh/watchdog
+#
+# Installation
+# 1. Insatll pip
+#   * suo easy_install pip
+#   * http://stackoverflow.com/questions/17271319/installing-pip-on-mac-os-x
+# 2. Install libyaml
+#   * brew install libyaml
+# 3. Install watchmedo
+#   * pip install watchdog
+#
+# should quote "$1"
 watch-vi() {
   # When edit a file with vi, it makes 'created' and 'deleted' event and
   # when touch a file, it makes 'modified' event.
@@ -185,37 +220,43 @@ ppcmd () {
   echo 'pp ppp goppp opp oppp oappp cppp'
 }
 
-pp() {
+# print
+pp () {
   print -l **/"$1"*
 }
 
+# print all match
+pa () {
+  print -l **/*"$1"*
+}
+
 # print parent
-ppp() {
+ppp () {
   dirname "$(pp "$1" | head -1)"
 }
 
 # go parent
-goppp() {
+goppp () {
   cd "$(ppp "$1")"
 }
 
 # open
-opp() {
+opp () {
   open "$(pp "$1" | head -1)"
 }
 
 # open parent
-oppp() {
+oppp () {
   open "$(ppp "$1")"
 }
 
 # open all in the parent
-oappp() {
+oappp () {
   open "$(ppp "$1")"/*
 }
 
 # copy
-cppp() {
+cppp () {
   cp "$(pp "$1")" "$2"
 }
 
