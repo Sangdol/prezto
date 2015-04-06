@@ -2,6 +2,9 @@
 " Sangdol's Vim Configuration
 "
 
+" set <Leader>
+let mapleader=","
+
 " Vundle {{{
 "
 " Install
@@ -28,7 +31,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'tpope/vim-markdown.git'
-Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'  " :h ack
+Plugin 'vim-scripts/VOoM' " :Voomhelp
+Plugin 'tpope/vim-surround' " :h surround
+Plugin 'mattn/emmet-vim'
+Plugin 'danro/rename.vim'
+Plugin 'vim-scripts/sql.vim--Stinson'
 
 " autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -37,6 +45,15 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " easymotion
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
+
+" VOom
+nnoremap <silent> <Leader>vm :Voom markdown<CR>
+nnoremap <silent> <Leader>vh :Voom html<CR>
+nnoremap <silent> <Leader>vp :Voom python<CR>
+let g:voom_tree_width = 45
+
+" emmet https://github.com/mattn/emmet-vim
+let g:user_emmet_leader_key='<C-L>'
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
@@ -117,9 +134,6 @@ set backspace=eol,start,indent
 set history=1000
 set undolevels=1000
 
-" set <Leader>
-let mapleader=","
-
 " You should make directories by yourself
 set backup
 set backupdir=~/.vim/backup
@@ -193,11 +207,20 @@ func! Paste_on_off()
   return
 endfunc
 
-" Run current file
-nnoremap <F5> :w<CR> :!./%<CR>
+" Make current file executable
+nnoremap <F2> :!chmod +x %<CR>
 
 " Run current line
+nnoremap <F3> Y:@"<CR>
+
+" Run current line on shell
 nnoremap <F4> :.w !bash<CR>
+
+" Run current file on shell
+nnoremap <F5> :w<CR> :!./%<CR>
+
+" Run current file on shell and read result
+nnoremap <F6> :w<CR> :r !./%<CR>
 
 " Paste Mode!
 nnoremap <silent> <F9> :call Paste_on_off()<CR>
@@ -271,12 +294,12 @@ while i <= 9
 endwhile
 
 " Easy buffer switch
-nnoremap <silent> <C-\> :b#<CR>
-nnoremap <Leader>v :vert sb<SPACE>
-nnoremap <C-l> :ls<CR>:b<SPACE>
+nnoremap <silent> <Leader>;; :b#<CR>
+nnoremap <C-L>l :ls<CR>:b<SPACE>
+
 let i = 1
 while i <= 9
-  execute 'nnoremap \' . i . ' :b' . i . '<CR>'
+  execute 'nnoremap <Leader>;' . i . ' :b' . i . '<CR>'
   let i = i + 1
 endwhile
 
@@ -305,16 +328,22 @@ nnoremap <silent> zl a<Space><Left><Esc>
 " Save with root permission inside Vim
 cmap w!! w !sudo tee > /dev/null %
 
-nnoremap <leader>w :w<CR>
+" Open new window
+nnoremap <leader>wh :vnew<CR>
+nnoremap <leader>wl :rightbelow vertical new<CR>
+nnoremap <leader>wj :below new<CR>
 
 " Touch current file
 nnoremap <LEADER>t :!touch %<CR><CR>
 
 " Clock
-nnoremap <Leader>da :!date<CR>
+nnoremap <Leader>da :echo system("date")<CR>
 
 " close tag
 inoremap <Leader>/ </<C-X><C-O>
+
+" check spell
+nnoremap <Leader>s :set spell!<CR>
 
 "}}}
 
