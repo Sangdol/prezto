@@ -168,7 +168,7 @@ endif
 
 "Status line
 set laststatus=2
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]\ %{strftime(\"%y/%m/%d\")}
 
 " }}}
 
@@ -295,7 +295,7 @@ endwhile
 
 " Easy buffer switch
 nnoremap <silent> <Leader>;; :b#<CR>
-nnoremap <C-L>l :ls<CR>:b<SPACE>
+nnoremap <C-L> :ls<CR>:b<SPACE>
 
 let i = 1
 while i <= 9
