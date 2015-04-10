@@ -60,6 +60,10 @@ alias grh='git reset @'
 alias ge='git blame'
 alias g-='git checkout -'
 
+gitcmd () {
+  echo 'gsh ggo grni gesh ger ges grp'
+}
+
 gsh () {
   git show ${1-@}
 }
@@ -73,9 +77,18 @@ grni () {
   GIT_SEQUENCE_EDITOR="sed -ie 's/^pick /e /'" git rebase -i "$@"
 }
 
+gesh () {
+  git blame -L"$2",+1 "$1" | awk '{print $1}'
+}
+
+# blamE Rebase
+ger () {
+  grni "$(gesh "$@")~"
+}
+
 # blamE Show
 ges () {
-  git show $(git blame -L"$2",+1 "$1" | awk '{print $1}')
+  git show $(gesh "$@")
 }
 
 # bash version
@@ -123,7 +136,7 @@ opentemp () {
     mkdir "$TEMP_DIR"
   fi
 
-  vim "$TEMP_DIR/$(date +"%y%m%d-%H%M").md"
+  vim "$TEMP_DIR/$(date +"%y%m%d-%H").md"
 }
 
 vi () {
