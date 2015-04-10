@@ -38,12 +38,6 @@ alias misc="vi ~/.zprezto/modules/misc/init.zsh"
 alias loc="vi ~/.zprezto/modules/local/init.zsh"
 alias cl="watch -t -n1 date" # dynamic clock
 
-# Mobile dev(Ubuntu)
-export PATH=$PATH:/opt/adt/sdk/platform-tools
-alias adb-start="adb forward tcp:9222 localabstract:chrome_devtools_remote"
-alias adb-kill="adb kill-server"
-alias ap-start="sudo hostapd /etc/hostapd/hostapd.conf"
-
 #
 # Override
 #
