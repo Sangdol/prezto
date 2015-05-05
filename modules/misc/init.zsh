@@ -130,7 +130,7 @@ opentemp () {
     mkdir "$TEMP_DIR"
   fi
 
-  vim "$TEMP_DIR/$(date +"%y%m%d-%H").md"
+  vim "$TEMP_DIR/$(date +"%y%m%d-%H%M").md"
 }
 
 vi () {
