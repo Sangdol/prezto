@@ -3,3 +3,4 @@
 # https://github.com/jonas/tig/wiki/Bindings
 
 set ignore-case = yes
+bind generic u move-page-up
