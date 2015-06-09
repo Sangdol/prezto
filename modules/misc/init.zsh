@@ -30,6 +30,7 @@ alias tailf="tail -f"
 alias misc="vi ~/.zprezto/modules/misc/init.zsh"
 alias loc="vi ~/.zprezto/modules/local/init.zsh"
 alias cl="watch -t -n1 date" # dynamic clock
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 #
 # Override
