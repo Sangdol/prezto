@@ -117,18 +117,27 @@ unsetopt HIST_VERIFY
 #
 
 # edit temp
-opentemp () {
+tempfile () {
   TEMP_DIR="$HOME/Documents/temp"
   if [ ! -d "$TEMP_DIR" ];then
     mkdir "$TEMP_DIR"
   fi
 
-  vim "$TEMP_DIR/$(date +"%y%m%d-%H%M").md"
+  echo "$TEMP_DIR/$(date +"%y%m%d-%H%M").md"
+}
+
+# emacs temp
+et () {
+  if [ $# -eq 0 ]; then
+    emacs $(tempfile)
+  else
+    emacs $*
+  fi
 }
 
 vi () {
   if [ $# -eq 0 ]; then
-    opentemp
+    vim $(tempfile)
   else
     vim $*
   fi
