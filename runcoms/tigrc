@@ -4,3 +4,4 @@
 
 set ignore-case = yes
 bind generic u move-page-up
+bind generic U move-first-line
