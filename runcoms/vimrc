@@ -37,6 +37,10 @@ Plugin 'tpope/vim-surround' " :h surround
 " Plugin 'mattn/emmet-vim'
 Plugin 'danro/rename.vim'
 Plugin 'vim-scripts/sql.vim--Stinson'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/Align'
+Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUFormatter(..list..)
+Plugin 'chrisbra/Recover.vim'
 
 " autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -79,7 +83,8 @@ filetype plugin indent on    " required
 " Auto Commands {{{
 
 " Automatically cd into the directory that the file is in
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+" https://github.com/tpope/vim-fugitive/issues/3
+autocm BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
