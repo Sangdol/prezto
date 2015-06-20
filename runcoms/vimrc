@@ -34,7 +34,7 @@ Plugin 'tpope/vim-markdown.git'
 Plugin 'mileszs/ack.vim'  " :h ack
 Plugin 'vim-scripts/VOoM' " :Voomhelp
 Plugin 'tpope/vim-surround' " :h surround
-Plugin 'mattn/emmet-vim'
+" Plugin 'mattn/emmet-vim'
 Plugin 'danro/rename.vim'
 Plugin 'vim-scripts/sql.vim--Stinson'
 
@@ -53,7 +53,7 @@ nnoremap <silent> <Leader>vp :Voom python<CR>
 let g:voom_tree_width = 45
 
 " emmet https://github.com/mattn/emmet-vim
-let g:user_emmet_leader_key='<C-L>'
+" let g:user_emmet_leader_key='<C-L>'
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
