@@ -185,7 +185,7 @@ function! Browser()
 	let line = escape(line, "#?&;|%")
 	if !empty(line)
 		if has("mac")
-			exec "!open ".line
+			exec "!open -a '/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app' ".line
 		elseif has("unix")
 			exec "!google-chrome ".line
 		endif
