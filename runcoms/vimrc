@@ -234,7 +234,7 @@ set pastetoggle=<F9>
 "{{{ Mappings
 "
 " New Tab
-nnoremap <silent> <C-t> :tabnew<CR>
+nnoremap <C-t> :tabnew<CR>
 
 " Next Tab
 nnoremap <silent> <C-k> :tabnext<CR>
@@ -296,6 +296,14 @@ while i <= 9
   let i = i + 1
 endwhile
 
+" Close windows
+let i = 1
+while i <= 9
+  execute 'nnoremap <Leader>c' . i . ' :' . i . 'wincmd w<CR>:q<CR>'
+  let i = i + 1
+endwhile
+
+
 " Easy buffer switch
 nnoremap <silent> <Leader>;; :b#<CR>
 nnoremap <C-L> :ls<CR>:b<SPACE>
@@ -347,6 +355,8 @@ inoremap <Leader>/ </<C-X><C-O>
 
 " check spell
 nnoremap <Leader>s :set spell!<CR>
+
+nnoremap <Leader>q :q<CR>
 
 "}}}
 
