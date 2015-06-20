@@ -3,7 +3,7 @@
 "
 
 " set <Leader>
-let mapleader=","
+let mapleader="\<Space>"
 
 " Vundle {{{
 "
@@ -34,7 +34,7 @@ Plugin 'tpope/vim-markdown.git'
 Plugin 'mileszs/ack.vim'  " :h ack
 Plugin 'vim-scripts/VOoM' " :Voomhelp
 Plugin 'tpope/vim-surround' " :h surround
-" Plugin 'mattn/emmet-vim'
+" Plugin 'mattn/emmet-vim' (HTML related)
 Plugin 'danro/rename.vim'
 Plugin 'vim-scripts/sql.vim--Stinson'
 Plugin 'tpope/vim-fugitive'
@@ -257,7 +257,7 @@ inoremap <silent> <Up> <Esc>gka
 inoremap <silent> <Down> <Esc>gja
 
 " Space will toggle folds!
-nnoremap <space> za
+" nnoremap <space> za
 
 " Search mappings: These will make it so that going to the next one in a search will center on the line it's found in.
 map N Nzz
@@ -350,8 +350,8 @@ nnoremap <LEADER>t :!touch %<CR><CR>
 " Clock
 nnoremap <Leader>da :echo system("date")<CR>
 
-" close tag
-inoremap <Leader>/ </<C-X><C-O>
+" close tag (HTML related)
+" inoremap <Leader>/ </<C-X><C-O>
 
 " check spell
 nnoremap <Leader>s :set spell!<CR>
