@@ -51,7 +51,9 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 
 " VOom
-nnoremap <silent> <Leader>m :Voom markdown<CR>
+nnoremap <silent> <Leader>mm :Voom markdown<CR>
+nnoremap <silent> <Leader>mt :Voomtoggle<CR>
+nnoremap <silent> <Leader>mq :Voomquit<CR>
 let g:voom_tree_width = 45
 
 " emmet https://github.com/mattn/emmet-vim
@@ -185,7 +187,8 @@ function! Browser()
 	let line = escape(line, "#?&;|%")
 	if !empty(line)
 		if has("mac")
-			exec "!open -a '/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app' ".line
+      " Need chrome script in $PATH
+			exec "!chrome ".line
 		elseif has("unix")
 			exec "!google-chrome ".line
 		endif
@@ -314,6 +317,9 @@ while i <= 9
   let i = i + 1
 endwhile
 
+" Easy load
+nnoremap <leader>l :e<SPACE>
+
 " Mistake proofing
 cnoremap W<CR> w<CR>
 cnoremap Q<CR> q<CR>
@@ -357,6 +363,8 @@ nnoremap <Leader>da :echo system("date")<CR>
 nnoremap <Leader>s :set spell!<CR>
 
 nnoremap <Leader>q :q<CR>
+
+nnoremap <Leader>p "0p
 
 "}}}
 
