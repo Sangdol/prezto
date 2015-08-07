@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/open -a "/Users/hugh/Applications/Google Chrome.app" $@
