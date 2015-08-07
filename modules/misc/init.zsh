@@ -200,6 +200,8 @@ open_lastest_screen_shot() {
   fi
 }
 
+# Usage: tellme "Good morning" | at 07:00
+# Need to load `atrun` agent on OS X - http://stackoverflow.com/questions/17740563/how-to-use-command-at-to-execute-shell-in-macos
 tellme() {
   if [[ "$OSTYPE" == linux-gnu ]]; then
     echo "notify-send '$1'"
