@@ -1,1 +1,3 @@
-sudo npm install -g less
+npm install -g less
+npm install -g grunt-cli
+npm install -g coffee-script
