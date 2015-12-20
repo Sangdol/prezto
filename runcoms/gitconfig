@@ -1,0 +1,14 @@
+[user]
+  email = hugh@tapasmedia.co
+  name = Hugh Lee
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[push]
+  default = simple
+[core]
+  excludesfile = /Users/hugh/.gitignore-global
+  pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+  autocrlf = input
