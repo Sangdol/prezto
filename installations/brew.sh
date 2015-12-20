@@ -44,17 +44,20 @@ brew install mycli
 brew install lynx
 brew install pstree
 brew install watch
+brew install gcal
+brew install thefuck
+brew install pandoc
 
 # Java Specific
 brew install tomcat
 brew install redis
-brew install elasticsearch
 brew install gradle
 brew install maven
 
 # Tapastic
 brew install libpng
 brew install libjpeg
+brew install homebrew/versions/elasticsearch090
 
 # For projects
 brew install mongodb
