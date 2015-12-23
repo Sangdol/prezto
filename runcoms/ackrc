@@ -9,6 +9,7 @@
 # -l : show only file names
 # -f : don't search inside of file (works like print -l in zsh)
 # -o : show only matching part
+# -Q, --literal : no regex
 #
 # Usages
 # * find files with more than a word
@@ -16,6 +17,7 @@
 ####################################################################
 
 # Only search with case sensitivity if there is mixed case
+# Can turn off this with --no-smart-case
 --smart-case
 
 # Follow symlinks
@@ -52,6 +54,6 @@ less -r
 --type-set=json=.json
 --type-set=less=.less
 --type-set=view:match:/.*(jsp|vm)$/
---type-set=java=.java
+--type-set=java=.java,.groovy
 --type-set=js=.js
 --type-set=vm=.vm
