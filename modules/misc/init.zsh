@@ -24,6 +24,7 @@ alias v='f -e vim' # quick opening files with vim
 alias h="history"
 alias oo='o .'
 alias pdate="TZ=America/Los_Angeles date" # PST
+alias udate="TZ=UTC date" # PST
 alias c="gcal ."
 alias d="date"
 alias tailf="tail -f"
@@ -32,6 +33,8 @@ alias loc="vi ~/.zprezto/modules/local/init.zsh"
 alias cl="watch -t -n1 date" # dynamic clock
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias ltl='launchctl'
+alias lines='wc -l'
+alias tp='node -p "+new Date" | pbcopy'
 
 #
 # Override
@@ -118,6 +121,10 @@ unsetopt HIST_VERIFY
 # functions
 #
 
+nd() {
+  node ~/Projects/ndicer/ndicer.js $@ | less
+}
+
 # Explaining shell commands in the shell
 # https://www.mankier.com/blog/explaining-shell-commands-in-the-shell.html?hn=1
 explain () {
@@ -137,7 +144,7 @@ explain () {
 
 # edit temp
 tempfile () {
-  TEMP_DIR="$HOME/Documents/temp"
+  TEMP_DIR="$HOME/Documents/temp/md"
   if [ ! -d "$TEMP_DIR" ];then
     mkdir "$TEMP_DIR"
   fi
@@ -220,23 +227,28 @@ how_old() {
 #
 # Installation
 # 1. Insatll pip
-#   * suo easy_install pip
+#   * sudo easy_install pip
 #   * http://stackoverflow.com/questions/17271319/installing-pip-on-mac-os-x
 # 2. Install libyaml
 #   * brew install libyaml
 # 3. Install watchmedo
 #   * pip install watchdog
 #
-# should quote "$1"
+# Usage
+# * For some reason, using exact match pattern doesn't work. Use '*' always.
+# * If you want to see what events are happening add the variable with parens.
+# $ watch-vi "*clj" 'echo "${watch_event_type}"'
+# $ watch-vi "*clj" 'lein test'
 watch-vi() {
   # When edit a file with vi, it makes 'created' and 'deleted' event and
   # when touch a file, it makes 'modified' event.
   # This function capture only 'created' and 'modified' event to run command only once.
+  # ... For some reason when I test again modifying a file makes 'created' and 'modified' events so removed capturing 'created' event.
   watchmedo shell-command \
   --patterns="$1" \
-  --command="if [ \"\${watch_event_type}\" == \"created\" -o \
-                  \"\${watch_event_type}\" == \"modified\" ]; \
-              then $2; \
+  --command="if [ \"\${watch_event_type}\" == \"modified\" ];then \
+               echo '------------------------'; \
+               $2; \
             fi" \
   .
 }
@@ -290,6 +302,23 @@ cppp () {
   cp "$(pp "$1")" "$2"
 }
 
+# Smart extract - makes directories when neccessary
+# http://unix.stackexchange.com/questions/64047/create-directory-if-zip-archive-contains-several-files
+unz() (
+  tmp=$(TMPDIR=. mktemp -d -- ${${argv[-1]:t:r}%.tar}.XXXXXX) || exit
+  print -r >&2 "Extracting in $tmp"
+  cd -- $tmp || exit
+  [[ $argv[-1] = /* ]] || argv[-1]=../$argv[-1]
+  (set -x; "$@"); ret=$?
+  files=(*(ND[1,2]))
+  case $#files in
+    (0) print -r >&2 "No file created"
+        rmdir -v "../$tmp";;
+    (1) mv -v -- $files .. && rmdir ../$tmp;;
+    (*) mv -v ../$tmp ../$tmp:r;;
+  esac && exit $ret
+)
+
 #
 # etc
 #
@@ -305,3 +334,4 @@ fi
 
 # HISTORY
 export HISTCONTROL=ignorespace
+
