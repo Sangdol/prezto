@@ -29,12 +29,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-scripts/vim-auto-save'
 Plugin 'tpope/vim-markdown.git'
 Plugin 'mileszs/ack.vim'  " :h ack
 Plugin 'vim-scripts/VOoM' " :Voomhelp
 Plugin 'tpope/vim-surround' " :h surround
-" Plugin 'mattn/emmet-vim' (HTML related)
 Plugin 'danro/rename.vim'
 Plugin 'vim-scripts/sql.vim--Stinson'
 Plugin 'tpope/vim-fugitive'
@@ -42,9 +40,10 @@ Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUFormatter(..list..)
 Plugin 'chrisbra/Recover.vim'
 
-" autosave
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+" Not being used
+" Plugin 'mattn/emmet-vim' (HTML related)
+" Plugin 'captbaritone/better-indent-support-for-php-with-html' " https://github.com/captbaritone/better-indent-support-for-php-with-html
 
 " easymotion
 let g:EasyMotion_smartcase = 1
@@ -56,12 +55,15 @@ nnoremap <silent> <Leader>mt :Voomtoggle<CR>
 nnoremap <silent> <Leader>mq :Voomquit<CR>
 let g:voom_tree_width = 45
 
+" SQLUtilities
+vnoremap <Leader>ms :SQLUFormatter<CR>
+
 " emmet https://github.com/mattn/emmet-vim
 " let g:user_emmet_leader_key='<C-L>'
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml']
+let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure']
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -364,8 +366,13 @@ nnoremap <Leader>s :set spell!<CR>
 
 nnoremap <Leader>q :q<CR>
 
-nnoremap <Leader>p "0p
+" Paste from clipboard
+vnoremap <Leader>p "0p
+nnoremap <C-w> :w<CR>
 
+" Start new line (Shift+Enter in IntelliJ, which is not mappable in terminal Vim)
+" http://stackoverflow.com/questions/598113/can-terminals-detect-shift-enter-or-control-enter
+inoremap <C-l> <ESC>A<CR>
 "}}}
 
 " OS Specific {{{
