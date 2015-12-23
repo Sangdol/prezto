@@ -29,7 +29,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-markdown.git'
 Plugin 'mileszs/ack.vim'  " :h ack
 Plugin 'vim-scripts/VOoM' " :Voomhelp
 Plugin 'tpope/vim-surround' " :h surround
@@ -39,7 +38,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUFormatter(..list..)
 Plugin 'chrisbra/Recover.vim'
-
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
@@ -366,7 +364,6 @@ nnoremap <Leader>s :set spell!<CR>
 
 nnoremap <Leader>q :q<CR>
 
-" Paste from clipboard
 vnoremap <Leader>p "0p
 nnoremap <C-w> :w<CR>
 
