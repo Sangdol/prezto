@@ -1,0 +1,4 @@
+# http://stackoverflow.com/questions/18813828/why-maven-use-jdk-1-6-but-my-java-version-is-1-7
+if [[ $(basename $(pwd)) == 'panda' ]];then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+fi
