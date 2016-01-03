@@ -51,6 +51,7 @@ alias gt='git tag'
 alias grh='git reset @'
 alias ge='git blame'
 alias g-='git checkout -'
+alias gre='gc --amend --reuse-message HEAD'
 
 gitcmd () {
   echo 'gsh ggo grni gesh ger ges grp'
