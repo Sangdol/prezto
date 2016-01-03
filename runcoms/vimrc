@@ -56,6 +56,9 @@ let g:voom_tree_width = 45
 " SQLUtilities
 vnoremap <Leader>ms :SQLUFormatter<CR>
 
+" NerdCommenter
+nmap <silent> <C-_> <Leader>c<Space>
+
 " emmet https://github.com/mattn/emmet-vim
 " let g:user_emmet_leader_key='<C-L>'
 
@@ -106,7 +109,7 @@ set nocompatible
 " Folding Stuffs
 set foldmethod=marker
 
-" Needed for Syntax Highlighting and stuff
+" Needed for Syntax Highlighting
 filetype plugin indent on
 syntax enable
 
@@ -116,17 +119,18 @@ set shiftround
 set shiftwidth=2
 set softtabstop=2 " for backspace
 set tabstop=2
-set expandtab " Everybody expand tab thesedays
+set expandtab
 set autoindent
 
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
-autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " Cool tab completion stuff
 set wildmenu
 set wildmode=list:longest,full
 
-set number " always show line numbers
+" Show line numbers
+set number
 
 " Search settings
 set ignorecase
@@ -139,7 +143,7 @@ set backspace=eol,start,indent
 set history=1000
 set undolevels=1000
 
-" You should make directories by yourself
+" You should make the directories
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
@@ -262,7 +266,7 @@ inoremap <silent> <Down> <Esc>gja
 " Space will toggle folds!
 " nnoremap <space> za
 
-" Search mappings: These will make it so that going to the next one in a search will center on the line it's found in.
+" Scroll to put the searched word in the middle
 map N Nzz
 map n nzz
 
@@ -272,7 +276,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 " Easy escape
 inoremap jk <Esc>
 
-" Diff shortcut
+" Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
 nnoremap <silent> <leader>do :diffoff<CR>
@@ -282,12 +286,6 @@ nnoremap <silent> <Leader>dd ggdG
 
 " Open help page about a word under cusor
 nnoremap <leader>h :h <C-r><C-w><CR>
-
-" For NerdCommenter
-nmap <silent> <C-_> <Leader>c<Space>
-
-" Shift tab default action
-inoremap <S-Tab> <Esc><<i
 
 " Yank all
 nnoremap <Leader>a :%y<CR>
@@ -350,14 +348,8 @@ nnoremap <leader>wh :vnew<CR>
 nnoremap <leader>wl :rightbelow vertical new<CR>
 nnoremap <leader>wj :below new<CR>
 
-" Touch current file
-nnoremap <LEADER>t :!touch %<CR><CR>
-
 " Clock
 nnoremap <Leader>da :echo system("date")<CR>
-
-" close tag (HTML related)
-" inoremap <Leader>/ </<C-X><C-O>
 
 " check spell
 nnoremap <Leader>s :set spell!<CR>
