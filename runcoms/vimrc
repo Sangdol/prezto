@@ -37,13 +37,17 @@ Plugin 'vim-scripts/sql.vim--Stinson'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUFormatter(..list..)
-Plugin 'chrisbra/Recover.vim'
+Plugin 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, deletes swapfile closes the diff window and finishes everything up
+Plugin 'evanmiller/nginx-vim-syntax'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
 " Plugin 'captbaritone/better-indent-support-for-php-with-html' " https://github.com/captbaritone/better-indent-support-for-php-with-html
 
 " easymotion
+" <Leader><Leader>w - word motion
+" <Leader><Leader>j/k - down/up
+" <Leader><Leader>f + <character> - jump to the character
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 
@@ -335,8 +339,10 @@ set fcs=fold:-
 nnoremap <silent> <leader>i :set nolist!<CR>
 
 " Create Blank Newlines and stay in Normal mode
-nnoremap <silent> zj o<Esc>
-nnoremap <silent> zk O<Esc>
+" http://superuser.com/a/607193/81915
+nnoremap <silent> zj :call append(line('.'), '')<CR>
+nnoremap <silent> zk :call append(line('.')-1, '')<CR>
+
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
 
@@ -351,17 +357,18 @@ nnoremap <leader>wj :below new<CR>
 " Clock
 nnoremap <Leader>da :echo system("date")<CR>
 
-" check spell
-nnoremap <Leader>s :set spell!<CR>
+nnoremap <Leader>s :w<CR>
+nnoremap <Leader><Leader>s :set spell!<CR>
 
 nnoremap <Leader>q :q<CR>
 
 vnoremap <Leader>p "0p
-nnoremap <C-w> :w<CR>
+
 
 " Start new line (Shift+Enter in IntelliJ, which is not mappable in terminal Vim)
 " http://stackoverflow.com/questions/598113/can-terminals-detect-shift-enter-or-control-enter
 inoremap <C-l> <ESC>A<CR>
+nnoremap <Leader>mj :%!python -m json.tool<CR>
 "}}}
 
 " OS Specific {{{
