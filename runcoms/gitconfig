@@ -9,3 +9,11 @@
   excludesfile = /Users/hugh/.gitignore-global
   pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
   autocrlf = input
+  ignorecase = false
+[diff]
+  tool = vimdiff
+  compactionHeuristic = true
+[difftool]
+  prompt = false
+[alias]
+  d = difftool
