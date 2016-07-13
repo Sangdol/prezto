@@ -48,6 +48,10 @@ brew install gcal
 brew install thefuck
 brew install pandoc
 
+# http://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
+brew install grep --with-default-names
+brew install gnu-sed --with-default-names
+
 # Java Specific
 brew install tomcat
 brew install redis
