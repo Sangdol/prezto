@@ -8,14 +8,26 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-alias t="cd ~/temp"
+alias a="grep"
+alias te="cd ~/temp"
+alias tm="cd /tmp"
+alias wb="cd ~/workbench"
 alias dl="cd ~/Downloads"
 alias zp="cd ~/.zprezto"
+alias jt="cd ~/Projects/java-test-driven-learning/src/test/java"
+alias nconf="cd /usr/local/etc/nginx/conf"
+alias ackrc="vi ~/.ackrc"
+alias sconf="vi ~/.ssh/config"
+alias we="curl http://wttr.in/seoul"
+alias hosts="sudo vi /etc/hosts"
+alias btests="vi ~/Projects/bash-test-driven-learning/tests.sh"
+alias ic="~/scripts/imgcat.sh"
 
 #
 # Fasd (https://github.com/clvv/fasd)
 #
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias f='fasd -f'        # file
 alias v='f -e vim' # quick opening files with vim
 
 #
@@ -23,8 +35,8 @@ alias v='f -e vim' # quick opening files with vim
 #
 alias h="history"
 alias oo='o .'
-alias pdate="TZ=America/Los_Angeles date" # PST
-alias udate="TZ=UTC date" # PST
+alias pd="TZ=America/Los_Angeles date" # PST
+alias ud="TZ=UTC date" # UTC
 alias c="gcal ."
 alias d="date"
 alias tailf="tail -f"
@@ -34,7 +46,8 @@ alias cl="watch -t -n1 date" # dynamic clock
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias ltl='launchctl'
 alias lines='wc -l'
-alias tp='node -p "+new Date" | pbcopy'
+alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # node -p "+new Date" | pbcopy' - makes newline
+alias s='say'
 
 #
 # Override
@@ -52,6 +65,37 @@ alias grh='git reset @'
 alias ge='git blame'
 alias g-='git checkout -'
 alias gre='gc --amend --reuse-message HEAD'
+alias gbd='gb -d'
+alias gbD='gb -D'
+
+guser () {
+  git config user.name "Hugh Lee"
+  git config user.email "hammerha@gmail.com"
+  git commit --amend --reset-author --no-edit
+  git log
+}
+
+# Recover deleted file
+# http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo
+grevive () {
+  git checkout $(git rev-list -n 1 HEAD -- "$1")~ -- "$1"
+}
+
+# Ignore file
+gig () {
+  echo "Ignored" "$@"
+  git update-index --assume-unchanged "$@"
+}
+
+gnig () {
+  echo "Un-ignore" "$@"
+  git update-index --no-assume-unchanged "$@"
+}
+
+# stash commit
+gscm () {
+  ga . && gc --no-verify -m "Stash commit"
+}
 
 gitcmd () {
   echo 'gsh ggo grni gesh ger ges grp'
@@ -74,6 +118,11 @@ gesh () {
   git blame -L"$2",+1 "$1" | awk '{print $1}'
 }
 
+# For CircleCI
+gcis () {
+  GIT_EDITOR="sed -ie '1 s/$/ \[ci skip\]/'" git commit --amend
+}
+
 # blamE Rebase
 ger () {
   grni "$(gesh "$@")~"
@@ -94,24 +143,48 @@ grp () {
   git checkout "$1" && git pull && git checkout - && git rebase "$1"
 }
 
-gh () {
-  # Extract account name and repo name from "...:{account-name}/{repo-name}.git"
-  repo_path=$(git config --get remote.origin.url | perl -n -e '/:(.*)\.git/ && print $1')
+# Extract account name and repo name from "...:{account-name}/{repo-name}.git"
+repopath () {
+  echo $(git config --get remote.origin.url | perl -n -e '/:(.*)\.git/ && print $1')
+}
 
-  if [ ! -z "$2" ];then
-    line="#L$2"
+# $ gh <branch> <file> [line]
+gh () {
+  repo_path=$(repopath)
+
+  if [ ! -z "$3" ];then
+    line="#L$3"
   fi
 
-  URL="https://github.com/$repo_path/tree/SF/$(git ls-files "$1" | head -1)$line"
+  URL="https://github.com/$repo_path/tree/$1/$(git ls-files "$2" | head -1)$line"
   echo "open $URL"
   open "$URL"
+}
+
+# $ gh <file> [line]
+ghs () {
+  gh SF $1 $2
+}
+
+# github compare
+# $ ghcmp <sha> <sha>
+ghcmp () {
+  repo_path=$(repopath)
+  URL="https://github.com/$repo_path/compare/$1...$2"
+  echo "open $URL"
+  open "$URL"
+}
+
+# github commit
+ghc () {
+  open "https://github.com/comicpanda/comic-panda/commit/$1"
 }
 
 # utils
 alias mv='mv -vi'
 alias cp='cp -vi'
 alias rm='rm -vi'
-alias trash='trash -v'
+alias t='trash -v'
 
 #
 # History
@@ -121,6 +194,26 @@ unsetopt HIST_VERIFY
 #
 # functions
 #
+
+cd() {
+  builtin cd "$@" && ls
+}
+
+# download img from loremflickr
+image() {
+  filename=$1.jpeg
+  width=$2
+  height=$3
+  if [[ $# -lt 2 ]]
+  then
+    echo "usage: lf filename width [height]"
+    return 1
+  elif [[ $# -eq 2 ]]
+  then
+    height=$width
+  fi
+  wget -O "$filename" "http://loremflickr.com/$width/$height"
+}
 
 nd() {
   node ~/Projects/ndicer/ndicer.js $@ | less
@@ -145,7 +238,7 @@ explain () {
 
 # edit temp
 tempfile () {
-  TEMP_DIR="$HOME/Documents/temp/md"
+  TEMP_DIR="$HOME/workbench/notes"
   if [ ! -d "$TEMP_DIR" ];then
     mkdir "$TEMP_DIR"
   fi
@@ -245,9 +338,10 @@ watch-vi() {
   # when touch a file, it makes 'modified' event.
   # This function capture only 'created' and 'modified' event to run command only once.
   # ... For some reason when I test again modifying a file makes 'created' and 'modified' events so removed capturing 'created' event.
+  # ... sometimes it makes 'created' and 'deleted' event. not sure why.
   watchmedo shell-command \
   --patterns="$1" \
-  --command="if [ \"\${watch_event_type}\" == \"modified\" ];then \
+  --command="if [ \"\${watch_event_type}\" == \"created\" ];then \
                echo '------------------------'; \
                $2; \
             fi" \
@@ -306,6 +400,11 @@ cppp () {
 # Smart extract - makes directories when neccessary
 # http://unix.stackexchange.com/questions/64047/create-directory-if-zip-archive-contains-several-files
 unz() (
+  if [ $# -eq 0 ];then
+    echo 'Usage: $ unz (unzip|tar) <file>'
+    exit
+  fi
+
   tmp=$(TMPDIR=. mktemp -d -- ${${argv[-1]:t:r}%.tar}.XXXXXX) || exit
   print -r >&2 "Extracting in $tmp"
   cd -- $tmp || exit
