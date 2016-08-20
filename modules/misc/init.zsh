@@ -20,7 +20,7 @@ alias ackrc="vi ~/.ackrc"
 alias sconf="vi ~/.ssh/config"
 alias we="curl http://wttr.in/seoul"
 alias hosts="sudo vi /etc/hosts"
-alias btests="vi ~/Projects/bash-test-driven-learning/tests.sh"
+alias bt="cd ~/Projects/bash-test-driven-learning/"
 alias ic="~/scripts/imgcat.sh"
 
 #
@@ -196,7 +196,7 @@ unsetopt HIST_VERIFY
 #
 
 cd() {
-  builtin cd "$@" && ls
+  builtin cd "$@" && ls -lh
 }
 
 # download img from loremflickr
