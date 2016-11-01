@@ -43,11 +43,12 @@ alias tailf="tail -f"
 alias misc="vi ~/.zprezto/modules/misc/init.zsh"
 alias loc="vi ~/.zprezto/modules/local/init.zsh"
 alias cl="watch -t -n1 date" # dynamic clock
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias fk='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias ltl='launchctl'
 alias lines='wc -l'
 alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # node -p "+new Date" | pbcopy' - makes newline
 alias s='say'
+alias sg='say -v Anna' # German - http://apple.stackexchange.com/questions/3454/say-in-different-language
 
 #
 # Override
@@ -424,7 +425,7 @@ unz() (
 #
 
 # CDPATH
-export CDPATH=.:~:~/Projects
+export CDPATH=.:~:~/Projects:~/Documents
 
 # Just for Ubuntu
 if [[ "$OSTYPE" == linux-gnu ]]; then
