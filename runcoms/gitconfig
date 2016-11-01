@@ -6,7 +6,7 @@
 [push]
   default = simple
 [core]
-  excludesfile = /Users/hugh/.gitignore-global
+  excludesfile = ~/.gitignore-global
   pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
   autocrlf = input
   ignorecase = false
@@ -17,3 +17,5 @@
   prompt = false
 [alias]
   d = difftool
+[include]
+  path = ~/.zprezto/modules/local/gitconfig
