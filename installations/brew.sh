@@ -58,13 +58,7 @@ brew install redis
 brew install gradle
 brew install maven
 
-# Tapastic
-brew install libpng
-brew install libjpeg
-brew install homebrew/versions/elasticsearch090
-
 # For projects
-brew install mongodb
 brew install mysql
 brew install nginx
 
