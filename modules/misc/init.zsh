@@ -23,6 +23,9 @@ alias hosts="sudo vi /etc/hosts"
 alias bt="cd ~/Projects/bash-test-driven-learning/"
 alias ic="~/scripts/imgcat.sh"
 
+alias dckrr='docker-machine restart default'
+alias dckr='eval "$(docker-machine env default)"'
+
 #
 # Fasd (https://github.com/clvv/fasd)
 #
@@ -70,7 +73,7 @@ alias gbd='gb -d'
 alias gbD='gb -D'
 
 guser () {
-  git config user.name "Hugh Lee"
+  git config user.name "Sanghyun Lee"
   git config user.email "hammerha@gmail.com"
   git commit --amend --reset-author --no-edit
   git log
