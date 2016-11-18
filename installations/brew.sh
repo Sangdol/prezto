@@ -27,7 +27,7 @@ brew install wget --with-iri
 # brew Install more recent versions of some OS X tools
 brew install vim --override-system-vi
 brew install homebrew/dupes/grep
-brew install homebrew/php/php55 --with-gmp
+# brew install homebrew/php/php55 --with-gmp
 
 # brew Install other useful binaries
 brew install ack
@@ -47,20 +47,21 @@ brew install watch
 brew install gcal
 brew install thefuck
 brew install pandoc
+brew install jq
 
 # http://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew install grep --with-default-names
 brew install gnu-sed --with-default-names
 
 # Java Specific
-brew install tomcat
-brew install redis
-brew install gradle
+# brew install tomcat
+# brew install redis
+# brew install gradle
 brew install maven
 
 # For projects
-brew install mysql
-brew install nginx
+# brew install mysql
+# brew install nginx
 
 # brew Remove outdated versions from the cellar
 brew cleanup
