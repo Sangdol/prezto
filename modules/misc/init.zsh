@@ -58,6 +58,7 @@ alias sg='say -v Anna' # German - http://apple.stackexchange.com/questions/3454/
 #
 
 # Git
+alias ma='git checkout master'
 alias gs='git status' # Override default
 alias gst='git stash' # Set other alias
 alias gd='gwd'    # Override default
