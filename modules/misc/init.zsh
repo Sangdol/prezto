@@ -18,7 +18,7 @@ alias jt="cd ~/Projects/java-test-driven-learning/src/test/java"
 alias nconf="cd /usr/local/etc/nginx/conf"
 alias ackrc="vi ~/.ackrc"
 alias sconf="vi ~/.ssh/config"
-alias we="curl http://wttr.in/seoul"
+alias we="curl http://wttr.in/berlin"
 alias hosts="sudo vi /etc/hosts"
 alias bt="cd ~/Projects/bash-test-driven-learning/"
 alias ic="~/scripts/imgcat.sh"
@@ -72,6 +72,8 @@ alias g-='git checkout -'
 alias gre='gc --amend --reuse-message HEAD'
 alias gbd='gb -d'
 alias gbD='gb -D'
+alias gdm='gd master...'
+alias gdms='gd master... --stat'
 
 guser () {
   git config user.name "Sanghyun Lee"
