@@ -202,6 +202,10 @@ unsetopt HIST_VERIFY
 # functions
 #
 
+dic() {
+  dict "$@" | less
+}
+
 cd() {
   builtin cd "$@" && ls -lh
 }
@@ -254,7 +258,7 @@ tempfile () {
 }
 
 # emacs temp
-et () {
+em () {
   if [ $# -eq 0 ]; then
     emacs $(tempfile)
   else
