@@ -21,7 +21,7 @@ alias sconf="vi ~/.ssh/config"
 alias we="curl http://wttr.in/berlin"
 alias hosts="sudo vi /etc/hosts"
 alias bt="cd ~/Projects/bash-test-driven-learning/"
-alias ic="~/scripts/imgcat.sh"
+alias ic="~/Documents/scripts/imgcat.sh" # https://www.iterm2.com/documentation-images.html
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
