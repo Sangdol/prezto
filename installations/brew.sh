@@ -52,6 +52,9 @@ brew install sleepwatcher
 brew install tldr
 brew install googler
 
+brew install koekeishiya/formulae/khd
+brew services start khd
+
 # http://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew install grep --with-default-names
 brew install gnu-sed --with-default-names
