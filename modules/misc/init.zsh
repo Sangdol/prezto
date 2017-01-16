@@ -75,13 +75,6 @@ alias gbD='gb -D'
 alias gdm='gd master...'
 alias gdms='gd master... --stat'
 
-guser () {
-  git config user.name "Sanghyun Lee"
-  git config user.email "hammerha@gmail.com"
-  git commit --amend --reset-author --no-edit
-  git log
-}
-
 # Recover deleted file
 # http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo
 grevive () {

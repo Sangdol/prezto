@@ -19,3 +19,6 @@
   d = difftool
 [include]
   path = ~/.zprezto/modules/local/gitconfig
+[user]
+	name = Sanghyun Lee
+	email = hammerha@gmail.com
