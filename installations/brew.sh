@@ -25,7 +25,7 @@ brew install bash
 brew install wget --with-iri
 
 # brew Install more recent versions of some OS X tools
-brew install vim --override-system-vi
+brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep
 # brew install homebrew/php/php55 --with-gmp
 
@@ -48,6 +48,9 @@ brew install gcal
 brew install thefuck
 brew install pandoc
 brew install jq
+brew install sleepwatcher
+brew install tldr
+brew install googler
 
 # http://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 brew install grep --with-default-names
