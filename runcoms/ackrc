@@ -10,6 +10,7 @@
 # -f : don't search inside of file (works like print -l in zsh)
 # -o : show only matching part
 # -Q, --literal : no regex
+# -h : no filename
 #
 # Usages
 # * find files with more than a word
