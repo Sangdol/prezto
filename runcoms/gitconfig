@@ -7,7 +7,7 @@
   default = simple
 [core]
   excludesfile = ~/.gitignore-global
-  pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+  pager = less -+F
   autocrlf = input
   ignorecase = false
 [diff]
