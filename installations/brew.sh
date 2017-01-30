@@ -51,6 +51,8 @@ brew install jq
 brew install sleepwatcher
 brew install tldr
 brew install googler
+brew install zsh zsh-completions
+brew install terminal-notifier
 
 brew install koekeishiya/formulae/khd
 brew services start khd
