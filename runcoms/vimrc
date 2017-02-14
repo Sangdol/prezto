@@ -38,6 +38,7 @@ Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUFormatter(..list..)
 Plugin 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, deletes swapfile closes the diff window and finishes everything up
 Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'tpope/vim-abolish' " :%S / :%Subvert
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
