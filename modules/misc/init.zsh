@@ -162,11 +162,6 @@ gh () {
   open "$URL"
 }
 
-# $ gh <file> [line]
-ghs () {
-  gh SF $1 $2
-}
-
 # github compare
 # $ ghcmp <sha> <sha>
 ghcmp () {
@@ -179,6 +174,13 @@ ghcmp () {
 # github commit
 ghc () {
   open "https://github.com/comicpanda/comic-panda/commit/$1"
+}
+
+# Show PR number of a commit
+# source: https://coderwall.com/p/kxb7kg/find-a-pull-request-given-the-commit-sha
+# SO (not directly related): http://stackoverflow.com/questions/17818167/find-a-pull-request-on-github-where-a-commit-was-originally-created
+gpr () {
+  git log --merges --ancestry-path --oneline $1..master | grep 'pull request' | tail -n1 | awk '{ print $5 }';
 }
 
 # utils
@@ -303,16 +305,6 @@ copy() {
 open_lastest_screen_shot() {
   if [[ "$OSTYPE" == linux-gnu ]]; then
     o "$HOME/Pictures/$(ls -tr $HOME/Pictures | tail -1)"
-  fi
-}
-
-# Usage: tellme "Good morning" | at 07:00
-# Need to load `atrun` agent on OS X - http://stackoverflow.com/questions/17740563/how-to-use-command-at-to-execute-shell-in-macos
-tellme() {
-  if [[ "$OSTYPE" == linux-gnu ]]; then
-    echo "notify-send '$1'"
-  elif [[ "$OSTYPE" == darwin* ]]; then
-    echo "growlnotify -ms '$1'"
   fi
 }
 
