@@ -432,3 +432,9 @@ fi
 # HISTORY
 export HISTCONTROL=ignorespace
 
+# Schedule sleep in X minutes, use like: sleep-in 60
+function sleep-in() {
+  local minutes=$1
+  local datetime=`date -v+${minutes}M +"%m/%d/%y %H:%M:%S"`
+  sudo pmset schedule sleep "$datetime"
+}
