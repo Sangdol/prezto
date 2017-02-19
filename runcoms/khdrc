@@ -76,12 +76,12 @@
 # vi-mode for non-terminal applications
 
 # remap left-control h/j/k/l -> arrow keys
-lctrl - h         ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "- left"
-lctrl - j         ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "- down"
-lctrl - k         ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "- up"
-lctrl - l         ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "- right"
+alt - h         ![hyperterm,terminal,iterm2]      :   khd -p "- left"
+alt - j         ![hyperterm,terminal,iterm2]      :   khd -p "- down"
+alt - k         ![hyperterm,terminal,iterm2]      :   khd -p "- up"
+alt - l         ![hyperterm,terminal,iterm2]      :   khd -p "- right"
 
-shift + lctrl - h ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "shift - left"
-shift + lctrl - j ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "shift - down"
-shift + lctrl - k ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "shift - up"
-shift + lctrl - l ![HyperTerm,Terminal,iTerm2, IntelliJ IDEA]      :   khd -p "shift - right"
+shift + alt - h ![hyperterm,terminal,iterm2]      :   khd -p "shift - left"
+shift + alt - j ![hyperterm,terminal,iterm2]      :   khd -p "shift - down"
+shift + alt - k ![hyperterm,terminal,iterm2]      :   khd -p "shift - up"
+shift + alt - l ![hyperterm,terminal,iterm2]      :   khd -p "shift - right"
