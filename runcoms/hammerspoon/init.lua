@@ -1,18 +1,27 @@
 -- http://www.hammerspoon.org/go/
 -- https://learnxinyminutes.com/docs/lua/
 
-hs.hotkey.bind({"cmd", "ctrl"}, "c", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:fullFrame()
+function resize(ratio)
+  return function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
 
-  f.x = max.x + 20
-  f.y = max.y + 40
-  f.w = max.w - 40
-  f.h = max.h - 60
-  win:setFrame(f)
-end)
+    margin = (1 - ratio) / 2
+
+    f.w = max.w * ratio
+    f.h = max.h * ratio
+    f.x = max.x + (max.w * margin)
+    f.y = max.y + (max.h * margin)
+    win:setFrame(f)
+  end
+end
+
+hs.hotkey.bind({"cmd", "alt"}, "1", resize(0.9))
+hs.hotkey.bind({"cmd", "alt"}, "2", resize(0.8))
+hs.hotkey.bind({"cmd", "alt"}, "3", resize(0.7))
+hs.hotkey.bind({"cmd", "alt"}, "4", resize(0.6))
 
 function reloadConfig(files)
     doReload = false
