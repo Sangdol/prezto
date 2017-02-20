@@ -53,6 +53,7 @@ brew install tldr
 brew install googler
 brew install zsh zsh-completions
 brew install terminal-notifier
+brew install m-cli
 
 brew install koekeishiya/formulae/khd
 brew services start khd

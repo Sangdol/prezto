@@ -1,5 +1,6 @@
 0 $HOME/Documents/til/auto-push.sh
 0 $HOME/Documents/writings/go-abroad/auto-push.sh
 0 $HOME/workbench/auto-push.sh
+4 $HOME/.zprezto/scripts/update-wallpaper.sh
 22:00 brew update
 22:00 tldr --update
