@@ -25,6 +25,7 @@ alias ic="~/Documents/scripts/imgcat.sh" # https://www.iterm2.com/documentation-
 alias goo="googler -l en" # https://github.com/jarun/googler
 alias no="terminal-notifier -message"
 alias tlog="tail /usr/local/var/log/alfred-timer.log"
+alias hammer="vi ~/.hammerspoon/init.lua"
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
