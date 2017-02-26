@@ -246,6 +246,14 @@ explain () {
   fi
 }
 
+# Examples section
+# https://news.ycombinator.com/item?id=10797303
+eg(){
+    MAN_KEEP_FORMATTING=1 man "$@" 2>/dev/null \
+        | sed --quiet --expression='/^E\(\x08.\)X\(\x08.\)\?A\(\x08.\)\?M\(\x08.\)\?P\(\x08.\)\?L\(\x08.\)\?E/{:a;p;n;/^[^ ]/q;ba}' \
+        | ${MANPAGER:-${PAGER:-pager -s}}
+}
+
 # edit temp
 tempfile () {
   TEMP_DIR="$HOME/workbench/notes"
