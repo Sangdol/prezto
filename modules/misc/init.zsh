@@ -24,7 +24,7 @@ alias bt="cd ~/Projects/bash-test-driven-learning/"
 alias ic="~/Documents/scripts/imgcat.sh" # https://www.iterm2.com/documentation-images.html
 alias goo="googler -l en" # https://github.com/jarun/googler
 alias no="terminal-notifier -message"
-alias tlog="tail /usr/local/var/log/alfred-timer.log"
+alias tlog="tail /usr/local/var/log/alfred-timer.log && date"
 alias hammer="vi ~/.hammerspoon/init.lua"
 
 alias dckrr='docker-machine restart default'
@@ -200,6 +200,12 @@ unsetopt HIST_VERIFY
 #
 # functions
 #
+
+# Constant to snake e.g., AB_CD -> ab-cd
+# as to ORS http://stackoverflow.com/questions/2021982/awk-without-printing-newline
+c-to-s () {
+  pbpaste | awk -v ORS="" '{print tolower($0)}' | sed 's/_/-/g' | pbcopy
+}
 
 dic() {
   dict "$@" | less
