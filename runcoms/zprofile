@@ -86,3 +86,7 @@ export LANG=en_US.UTF-8
 # Pythoon pip --user installation path
 # http://stackoverflow.com/questions/7143077/how-can-i-install-packages-in-my-home-folder-with-pip
 export PATH=$HOME/Library/Python/3.6/bin:$PATH
+
+# GOPATH
+export GOPATH=$HOME/gocode
+export PATH=$PATH:$GOPATH/bin
