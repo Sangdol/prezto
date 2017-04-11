@@ -228,9 +228,6 @@ endfunc
 " Make current file executable
 nnoremap <F2> :!chmod +x %<CR>
 
-" Run current line
-nnoremap <F3> Y:@"<CR>
-
 " Run current line on shell
 nnoremap <F4> :.w !bash<CR>
 
@@ -368,6 +365,9 @@ nnoremap <Leader>q :q<CR>
 
 vnoremap <Leader>p "0p
 
+" http://vim.wikia.com/wiki/Insert_current_date_or_time
+nnoremap <F3> "=strftime("%H:%M")<CR>P
+inoremap <F3> <C-R>=strftime("%H:%M")<CR>
 
 " Start new line (Shift+Enter in IntelliJ, which is not mappable in terminal Vim)
 " http://stackoverflow.com/questions/598113/can-terminals-detect-shift-enter-or-control-enter
