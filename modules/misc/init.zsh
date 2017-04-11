@@ -26,6 +26,7 @@ alias goo="googler -l en" # https://github.com/jarun/googler
 alias no="terminal-notifier -message"
 alias tl="tail /usr/local/var/log/alfred-timer.log && date" # timer log
 alias hammer="vi ~/.hammerspoon/init.lua"
+alias jclip="pbpaste | jq . | pbcopy"
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
@@ -285,11 +286,6 @@ vi () {
   else
     vim $*
   fi
-}
-
-# pretty(python) json
-pjson () {
-  python -m json.tool
 }
 
 md () {
