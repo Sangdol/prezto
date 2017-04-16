@@ -1,14 +1,23 @@
-#!/bin/sh
-#
-# This script is dependant on m-cli (https://github.com/rgcr/m-cli).
+#!/bin/bash
 #
 
 HOURS=$(date +"%H")
 WALLPAPER_PATH=$HOME/Documents/pictures/wallpapers
 SCRIPT_PATH=$HOME/.zprezto/scripts
 
-if [[ $HOURS -ge 18 || $HOURS -le 6 ]];then
-  $HOME/.zprezto/scripts/wallpaper $WALLPAPER_PATH/night.jpg
+update() {
+  filename=$1
+  m wallpaper $WALLPAPER_PATH/$filename.jpg
+}
+
+# Bash error: value too great for base (error token is “09”)
+# http://stackoverflow.com/questions/21049822/bash-error-value-too-great-for-base-error-token-is-09
+if [[ "10#$HOURS" -le 12 ]];then
+  update morning
+elif [[ "$HOURS" -le 17 ]];then
+  update afternoon
+elif [[ "$HOURS" -le 20 ]];then
+  update evening
 else
-  $HOME/.zprezto/scripts/wallpaper $WALLPAPER_PATH/morning.jpg
+  update night
 fi
