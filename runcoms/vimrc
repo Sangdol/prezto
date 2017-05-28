@@ -29,7 +29,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mileszs/ack.vim'  " :h ack
-Plugin 'vim-scripts/VOoM' " :Voomhelp
+Plugin 'vim-voom/VOoM' " :Voomhelp
 Plugin 'tpope/vim-surround' " :h surround
 Plugin 'danro/rename.vim'
 Plugin 'vim-scripts/sql.vim--Stinson'
@@ -39,6 +39,7 @@ Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUForma
 Plugin 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, deletes swapfile closes the diff window and finishes everything up
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'tpope/vim-abolish' " :%S / :%Subvert
+Plugin 'cespare/vim-toml'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
@@ -72,7 +73,7 @@ nmap <silent> <C-_> <Leader>c<Space>
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript']
+let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'shell']
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
