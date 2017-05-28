@@ -25,6 +25,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'Lokaltog/vim-easymotion'  " :h easymotion.txt
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
@@ -40,10 +41,16 @@ Plugin 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, delet
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'tpope/vim-abolish' " :%S / :%Subvert
 Plugin 'cespare/vim-toml'
+Plugin 'isRuslan/vim-es6'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
 " Plugin 'captbaritone/better-indent-support-for-php-with-html' " https://github.com/captbaritone/better-indent-support-for-php-with-html
+
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " easymotion
 " <Leader><Leader>w - word motion
