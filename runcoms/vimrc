@@ -42,6 +42,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'tpope/vim-abolish' " :%S / :%Subvert
 Plugin 'cespare/vim-toml'
 Plugin 'isRuslan/vim-es6'
+Plugin 'fatih/vim-go'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
@@ -372,7 +373,7 @@ nnoremap <leader>wj :below new<CR>
 " Clock
 nnoremap <Leader>da :echo system("date")<CR>
 
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>s :up<CR>
 nnoremap <Leader><Leader>s :set spell!<CR>
 
 nnoremap <Leader>q :q<CR>
