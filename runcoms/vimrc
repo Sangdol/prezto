@@ -43,10 +43,16 @@ Plugin 'tpope/vim-abolish' " :%S / :%Subvert
 Plugin 'cespare/vim-toml'
 Plugin 'isRuslan/vim-es6'
 Plugin 'fatih/vim-go'
+Plugin 'wlangstroth/vim-racket'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
 " Plugin 'captbaritone/better-indent-support-for-php-with-html' " https://github.com/captbaritone/better-indent-support-for-php-with-html
+
+" Syntastic
+" To avoid "syntastic: error: checker racket/racket: checks disabled for security reasons; set g:syntastic_enable_racket_racket_checker to 1 to override"
+" - https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic-checkers.txt#L5372
+let g:syntastic_enable_racket_racket_checker=1
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -87,7 +93,7 @@ nmap <silent> <C-_> <Leader>c<Space>
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go']
+let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim']
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -379,10 +385,6 @@ nnoremap <Leader><Leader>s :set spell!<CR>
 nnoremap <Leader>q :q<CR>
 
 vnoremap <Leader>p "0p
-
-" http://vim.wikia.com/wiki/Insert_current_date_or_time
-nnoremap <F3> "=strftime("%H:%M")<CR>P
-inoremap <F3> <C-R>=strftime("%H:%M")<CR>
 
 " Start new line (Shift+Enter in IntelliJ, which is not mappable in terminal Vim)
 " http://stackoverflow.com/questions/598113/can-terminals-detect-shift-enter-or-control-enter
