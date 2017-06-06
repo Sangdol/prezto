@@ -39,6 +39,7 @@ less -r
 # Ignore dirs
 --ignore-dir=.idea/
 --ignore-dir=node_modules/
+--ignore-dir=bower_components/
 --ignore-dir=target
 
 # Ignore files
