@@ -44,6 +44,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'isRuslan/vim-es6'
 Plugin 'fatih/vim-go'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'moll/vim-node'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
@@ -64,6 +65,7 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gg :Ggrep<Space>
 
 " easymotion
 " <Leader><Leader>w - word motion
