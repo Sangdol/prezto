@@ -3,7 +3,6 @@
 
 HOURS=$(date +"%H")
 WALLPAPER_PATH=$HOME/Documents/pictures/wallpapers
-SCRIPT_PATH=$HOME/.zprezto/scripts
 
 update() {
   filename=$1
@@ -12,7 +11,9 @@ update() {
 
 # Bash error: value too great for base (error token is “09”)
 # http://stackoverflow.com/questions/21049822/bash-error-value-too-great-for-base-error-token-is-09
-if [[ "10#$HOURS" -le 12 ]];then
+if [[ "10#$HOURS" -le 5 ]];then
+  update night
+elif [[ "10#$HOURS" -le 12 ]];then
   update morning
 elif [[ "$HOURS" -le 17 ]];then
   update afternoon
