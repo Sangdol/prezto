@@ -82,6 +82,9 @@ nnoremap <silent> <Leader>mt :Voomtoggle<CR>
 nnoremap <silent> <Leader>mq :Voomquit<CR>
 let g:voom_tree_width = 45
 
+" close vim if the only window left open is a VOom tree
+autocmd bufenter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
+
 " SQLUtilities
 vnoremap <Leader>ms :SQLUFormatter<CR>
 
