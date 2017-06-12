@@ -93,3 +93,8 @@ export PATH=$PATH:$GOPATH/bin
 
 # Racket Path
 export PATH=$PATH:"/Applications/Racket v6.9/bin"
+
+# GNU utils as default
+# https://apple.stackexchange.com/a/69332/8271
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
