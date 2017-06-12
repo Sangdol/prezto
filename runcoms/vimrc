@@ -45,6 +45,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'fatih/vim-go'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'moll/vim-node'
+Plugin 'Valloric/YouCompleteMe'
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
