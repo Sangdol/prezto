@@ -1,4 +1,4 @@
-#
+#/Applications/Racket v6.9/bin
 # Executes commands at login pre-zshrc.
 #
 # Authors:
@@ -90,3 +90,6 @@ export PATH=$HOME/Library/Python/3.6/bin:$PATH
 # GOPATH
 export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin
+
+# Racket Path
+export PATH=$PATH:"/Applications/Racket v6.9/bin"
