@@ -233,7 +233,9 @@ image() {
 }
 
 nd() {
-  node ~/Projects/ndicer/ndicer.js $@ | less
+  node $HOME/Projects/ndicer/ndicer.js $@ | less
+  # or `npm install -g`
+  # node /usr/local/lib/node_modules/ndicer/ndicer.js $@ | less
 }
 
 # Explaining shell commands in the shell
