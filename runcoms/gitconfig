@@ -7,7 +7,7 @@
   default = simple
 [core]
   excludesfile = ~/.gitignore-global
-  pager = less -+F
+  pager = less -+F -r
   autocrlf = input
   ignorecase = false
 [diff]
