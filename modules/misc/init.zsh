@@ -77,8 +77,8 @@ alias g-='git checkout -'
 alias gre='gc --amend --reuse-message HEAD'
 alias gbd='gb -d'
 alias gbD='gb -D'
-alias gdm='gd master...'
-alias gdms='gd master... --stat'
+alias gdm='gd origin/master...' # origin/master - no need to keep the local master latest
+alias gdms='gd origin/master... --stat'
 
 # Recover deleted file
 # http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo
