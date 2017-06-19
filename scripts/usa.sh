@@ -19,18 +19,18 @@ gawk 'BEGIN {
 }
 
 title_match_count == 0 && /^'$1'(\w+)? command/ {
-  title_match_count++;
+  title_match_count++
 }
 
 title_match_count > 0 {
-  result = result"\n"$0;
+  result = result"\n"$0
 }
 
 title_match_count > 0 && /(---|===)/ {
-  marker++;
+  marker++
 }
 
 marker > 1 {
-  print result;
-  exit 0;
+  print result
+  exit 0
 }' $FILE | tail -n +2 | head -n -3 | less
