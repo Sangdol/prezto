@@ -54,6 +54,8 @@ brew install googler
 brew install zsh zsh-completions
 brew install terminal-notifier
 brew install m-cli
+brew install rsync
+brew install translate-shell
 
 brew install koekeishiya/formulae/khd
 brew services start khd
