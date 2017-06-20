@@ -27,6 +27,7 @@ alias no="terminal-notifier -message"
 alias tl="tail /usr/local/var/log/alfred-timer.log && date" # timer log
 alias hammer="vi ~/.hammerspoon/init.lua"
 alias jclip="pbpaste | jq . | pbcopy"
+alias path='echo $PATH | tr ":" "\n"'
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
