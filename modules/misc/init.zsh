@@ -203,6 +203,10 @@ unsetopt HIST_VERIFY
 # functions
 #
 
+function tran() {
+  trans "$@" | less -r
+}
+
 # Constant to snake e.g., AB_CD -> ab-cd
 # as to ORS http://stackoverflow.com/questions/2021982/awk-without-printing-newline
 c-to-s () {
