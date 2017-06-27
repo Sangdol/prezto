@@ -56,6 +56,7 @@ brew install terminal-notifier
 brew install m-cli
 brew install rsync
 brew install translate-shell
+brew install gawk
 
 brew install koekeishiya/formulae/khd
 brew services start khd
