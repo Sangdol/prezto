@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 REASON=$1
 STACK_NAME=$2
 VERSION=$3
@@ -9,15 +11,17 @@ if [[ -z $STACK_NAME || -z $REASON ]];then
   exit 0
 fi
 
-LINES=$(senza inst | grep $STACK_NAME)
+echo "Senza instant..."
+LINES=$(senza inst | awk '$1 ~ "'$STACK_NAME'" { print $0 }')
+echo "$LINES"
 
 if [[ "$VERSION" ]]; then
   LINES=$(echo -e "$LINES" | awk '$2 == '$VERSION' { print $0 }')
 fi
 
 LINE=$(echo -e "$LINES" | head -1)
-REAL_STACK_NAME=$(echo $LINE | awk '{ print $1; }')
-IP=$(echo $LINE | awk '{ print $5; }')
+REAL_STACK_NAME=$(echo $LINE | awk '{ print $1 }')
+IP=$(echo $LINE | awk '{ print $5 }')
 
 if [[ -z $IP ]]; then
   echo "No matching instance"
