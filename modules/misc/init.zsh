@@ -65,7 +65,7 @@ alias sg='say -v Anna' # German - http://apple.stackexchange.com/questions/3454/
 #
 
 # Git
-alias ma='git checkout master'
+alias ma='git checkout master && git pull'
 alias gs='git status' # Override default
 alias gst='git stash' # Set other alias
 alias gd='gwd'    # Override default
@@ -157,7 +157,8 @@ ges () {
 
 # pull target branch and rebase
 grp () {
-  git checkout "$1" && git pull && git checkout - && git rebase "$1"
+  target=${1:-master}
+  git checkout "$target" && git pull && git checkout - && git rebase "$target"
 }
 
 # Extract account name and repo name from "...:{account-name}/{repo-name}.git"
