@@ -57,6 +57,7 @@ brew install m-cli
 brew install rsync
 brew install translate-shell
 brew install gawk
+brew install mediainfo
 
 brew install koekeishiya/formulae/khd
 brew services start khd
