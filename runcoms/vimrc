@@ -46,6 +46,11 @@ Plugin 'fatih/vim-go'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'moll/vim-node'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-utils/vim-man'
+Plugin 'junegunn/fzf'
+
+" fzf
+set rtp+=~/.fzf
 
 " Not being used
 " Plugin 'mattn/emmet-vim' (HTML related)
