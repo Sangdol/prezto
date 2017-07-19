@@ -28,6 +28,7 @@ alias tl="tail /usr/local/var/log/alfred-timer.log && date" # timer log
 alias hammer="vi ~/.hammerspoon/init.lua"
 alias jclip="pbpaste | jq . | pbcopy"
 alias path='echo $PATH | tr ":" "\n"'
+alias vr="vim - -R"
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
@@ -457,4 +458,30 @@ function sleep-in() {
   local minutes=$1
   local datetime=`date -v+${minutes}M +"%m/%d/%y %H:%M:%S"`
   sudo pmset schedule sleep "$datetime"
+}
+
+compress_mts() {
+  for f in **/*MTS;do
+    no_ext="${f%.*}"
+    target="$no_ext".mp4
+
+    if [[ ! -f "$target" ]];then
+      echo "------ Compressing $target -------" | tee -a compress_mts.log
+      ffmpeg -i "$f" -c:v libx264 -crf 20 -c:a aac "$target" 2>&1 | tee -a compress_mts.log
+      echo "------ $target compressed. Mac is taking a 30 seconds rest. -------" | tee -a compress_mts.log
+      sleep 30
+    else
+      echo "------ $target already exist -------" | tee -a compress_mts.log
+    fi
+  done
+
+  if [[ "$1" == "sleep" ]];then
+    m sleep
+  fi
+}
+
+# vim man
+# https://github.com/vim-utils/vim-man
+vm() {
+  vim -c "Man $1 $2" -c 'silent only'
 }
