@@ -26,7 +26,6 @@ brew install wget --with-iri
 
 # brew Install more recent versions of some OS X tools
 brew install vim --with-override-system-vi
-brew install homebrew/dupes/grep
 # brew install homebrew/php/php55 --with-gmp
 
 # brew Install other useful binaries
@@ -45,7 +44,6 @@ brew install lynx
 brew install pstree
 brew install watch
 brew install gcal
-brew install thefuck
 brew install pandoc
 brew install jq
 brew install sleepwatcher
