@@ -48,13 +48,11 @@ Plugin 'moll/vim-node'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-utils/vim-man'
 Plugin 'junegunn/fzf'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 
 " vim-markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 2
-let g:vim_markdown_new_list_item_indent = 2
+let g:markdown_folding = 1
+set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+set conceallevel=2 " to conceal _, * used for italic or bold
 
 " fzf
 set rtp+=~/.fzf
