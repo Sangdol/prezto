@@ -82,6 +82,16 @@ alias gbD='gb -D'
 alias gdm='gd origin/master...' # origin/master - no need to keep the local master latest
 alias gdms='gd origin/master... --stat'
 
+# zzom - til, tldr, cheat
+zz () {
+  for command in {til,tldr,cheat};do
+    res="$res""-------- $command --------\n"
+    res="$res$(eval "${command} $@")\n"
+  done
+
+  echo "$res" | less
+}
+
 # Recover deleted file
 # http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo
 grevive () {
