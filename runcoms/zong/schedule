@@ -2,5 +2,10 @@
 0 $HOME/Documents/writings/go-abroad/auto-push.sh
 0 $HOME/workbench/auto-push.sh
 4 $HOME/.zprezto/scripts/update-wallpaper.sh
+
+21:00 pgrep -x Dropbox || terminal-notifier -message "Dropbox is not running." -title zong
+21:00 pgrep -x "Google Drive" || terminal-notifier -message "Google Drive is not running." -title zong
 22:00 brew update
 22:00 tldr --update
+
+
