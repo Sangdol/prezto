@@ -94,6 +94,10 @@ export PATH=$PATH:$GOPATH/bin
 # Racket Path
 export PATH=$PATH:"/Applications/Racket v6.9/bin"
 
+# Python encodng issue
+# https://stackoverflow.com/a/4027726/524588
+export PYTHONIOENCODING="utf_8"
+
 # GNU utils as default
 # https://apple.stackexchange.com/a/69332/8271
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
