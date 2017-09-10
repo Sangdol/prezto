@@ -75,5 +75,7 @@ brew install maven
 # brew install mysql
 # brew install nginx
 
+# Cask
+brew cask install ngrok
 # brew Remove outdated versions from the cellar
 brew cleanup
