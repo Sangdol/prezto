@@ -28,7 +28,7 @@ alias tl="tail /usr/local/var/log/alfred-timer.log && date" # timer log
 alias hammer="vi ~/.hammerspoon/init.lua"
 alias jclip="pbpaste | jq . | pbcopy"
 alias path='echo $PATH | tr ":" "\n"'
-alias vr="vim - -R"
+alias vr="vim -"
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
@@ -81,6 +81,7 @@ alias gbd='gb -d'
 alias gbD='gb -D'
 alias gdm='gd origin/master...' # origin/master - no need to keep the local master latest
 alias gdms='gd origin/master... --stat'
+alias gpp='gp -u origin HEAD'
 
 # zzom - til, tldr, cheat
 zz () {
@@ -240,7 +241,7 @@ image() {
   height=$3
   if [[ $# -lt 2 ]]
   then
-    echo "usage: lf filename width [height]"
+    echo "usage: image filename width [height]"
     return 1
   elif [[ $# -eq 2 ]]
   then
@@ -451,9 +452,6 @@ unz() (
 #
 # etc
 #
-
-# CDPATH
-export CDPATH=.:~:~/Projects:~/Documents
 
 # Just for Ubuntu
 if [[ "$OSTYPE" == linux-gnu ]]; then
