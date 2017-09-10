@@ -49,6 +49,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-utils/vim-man'
 Plugin 'junegunn/fzf'
 
+" YouCompleteMe
+nnoremap <Leader>yr :YcmCompleter RefactorRename<Space>
+nnoremap <Leader>yg :YcmCompleter GoTo<Enter>
+nnoremap <Leader>yd :YcmCompleter GoToDefinition<Enter>
+nnoremap <Leader>yf :YcmCompleter GoToReferences<Enter>
+
 " vim-markdown
 let g:markdown_folding = 1
 set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
@@ -109,7 +115,7 @@ nmap <silent> <C-_> <Leader>c<Space>
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk']
+let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
