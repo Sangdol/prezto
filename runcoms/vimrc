@@ -7,47 +7,50 @@ let mapleader="\<Space>"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Vundle {{{
+" Vim Plug {{{
 "
-" Install
-" $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh --tern-completer " only for js
+  endif
+endfunction
 
 " Optional plugins
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'Lokaltog/vim-easymotion'  " :h easymotion.txt
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mileszs/ack.vim'  " :h ack
-Plugin 'vim-voom/VOoM' " :Voomhelp
-Plugin 'tpope/vim-surround' " :h surround
-Plugin 'danro/rename.vim'
-Plugin 'vim-scripts/sql.vim--Stinson'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/Align'
-Plugin 'vim-scripts/SQLUtilities' " Dependant on Align plugin - [range]SQLUFormatter(..list..)
-Plugin 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, deletes swapfile closes the diff window and finishes everything up
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'tpope/vim-abolish' " :%S / :%Subvert
-Plugin 'cespare/vim-toml'
-Plugin 'isRuslan/vim-es6'
-Plugin 'fatih/vim-go'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'moll/vim-node'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-utils/vim-man'
-Plugin 'junegunn/fzf'
+Plug 'vim-scripts/taglist.vim'
+Plug 'Lokaltog/vim-easymotion'  " :h easymotion.txt
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'kchmck/vim-coffee-script'
+Plug 'mileszs/ack.vim'  " :h ack
+Plug 'vim-voom/VOoM' " :Voomhelp
+Plug 'tpope/vim-surround' " :h surround
+Plug 'danro/rename.vim'
+Plug 'vim-scripts/sql.vim--Stinson', { 'for': 'sql' }
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/SQLUtilities', { 'for': 'sql' } " Dependant on Align plugin - [range]SQLUFormatter(..list..)
+Plug 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, deletes swapfile closes the diff window and finishes everything up
+Plug 'tpope/vim-abolish' " :%S / :%Subvert
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug 'Valloric/YouCompleteMe', { 'for': 'javascript', 'do': function('BuildYCM') }
+Plug 'vim-utils/vim-man'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+
+" vim-rooter
+let g:rooter_silent_chdir = 1 " To stop vim-rooter echoing the project directory:
 
 " YouCompleteMe
 nnoremap <Leader>yr :YcmCompleter RefactorRename<Space>
@@ -59,13 +62,6 @@ nnoremap <Leader>yf :YcmCompleter GoToReferences<Enter>
 let g:markdown_folding = 1
 set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 set conceallevel=2 " to conceal _, * used for italic or bold
-
-" fzf
-set rtp+=~/.fzf
-
-" Not being used
-" Plugin 'mattn/emmet-vim' (HTML related)
-" Plugin 'captbaritone/better-indent-support-for-php-with-html' " https://github.com/captbaritone/better-indent-support-for-php-with-html
 
 " Syntastic
 " To avoid "syntastic: error: checker racket/racket: checks disabled for security reasons; set g:syntastic_enable_racket_racket_checker to 1 to override"
@@ -95,6 +91,18 @@ nmap <Leader>F <Leader><Leader>F
 nmap <Leader>j <Leader><Leader>j
 nmap <Leader>k <Leader><Leader>k
 
+" fzf
+nmap <Leader>zf :Files<Enter>
+nmap <Leader>zb :Buffers<Enter>
+nmap <Leader>za :Ag<Space>
+nmap <Leader>zl :Lines<Space>
+nmap <Leader>zc :Commits<Enter>
+nmap <Leader>zv :BCommits<Enter>
+nmap <Leader>zz :Commands<Enter>
+nmap <Leader>zhh :History<Enter>
+nmap <Leader>zh: :History:<Enter>
+nmap <Leader>zh/ :History/<Enter>
+
 " VOom
 nnoremap <silent> <Leader>mm :Voom markdown<CR>
 nnoremap <silent> <Leader>mt :Voomtoggle<CR>
@@ -117,21 +125,7 @@ nmap <silent> <C-_> <Leader>c<Space>
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
 let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+call plug#end()
 " }}}
 
 " Auto Commands {{{
