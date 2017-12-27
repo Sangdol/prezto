@@ -83,7 +83,7 @@ let g:syntastic_enable_racket_racket_checker=1
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :lchdir %:p:h<CR>:NERDTreeToggle<CR>
+map <C-m> :NERDTree %:p:h<CR>
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
