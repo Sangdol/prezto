@@ -294,6 +294,11 @@ set pastetoggle=<F9>
 
 "{{{ Mappings
 "
+
+" https://stackoverflow.com/a/27878200/524588
+inoremap <C-e> <Esc>A
+inoremap <C-a> <Esc>I
+
 " New Tab
 nnoremap <C-t> :tabnew<CR>
 
