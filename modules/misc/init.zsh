@@ -494,3 +494,10 @@ compress_mts() {
 vm() {
   vim -c "Man $1 $2" -c 'silent only'
 }
+
+s10() {
+  for i in {1..10};do
+    say $@
+    sleep 1
+  done
+}
