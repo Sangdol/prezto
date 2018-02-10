@@ -1,7 +1,8 @@
 0 $HOME/Documents/til/auto-push.sh
 0 $HOME/Documents/writings/go-abroad/auto-push.sh
+0 $HOME//Dropbox/data/Private/diary/auto-push.sh
 0 $HOME/workbench/auto-push.sh
-4 $HOME/.zprezto/scripts/update-wallpaper.sh
+# 4 $HOME/.zprezto/scripts/update-wallpaper.sh
 
 21:00 pgrep -x Dropbox || terminal-notifier -message "Dropbox is not running." -title zong
 21:00 pgrep -x "Backup and Sync" || terminal-notifier -message "Google Drive is not running." -title zong
