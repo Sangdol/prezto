@@ -41,6 +41,7 @@ less -r
 --ignore-dir=node_modules/
 --ignore-dir=bower_components/
 --ignore-dir=target
+--ignore-dir=dist
 
 # Ignore files
 --ignore-file=match:/.*min.*(js|css)$/
