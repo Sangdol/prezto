@@ -28,10 +28,11 @@ alias tl="tail /usr/local/var/log/alfred-timer.log && date" # timer log
 alias hammer="vi ~/.hammerspoon/init.lua"
 alias jclip="pbpaste | jq . | pbcopy"
 alias path='echo $PATH | tr ":" "\n"'
-alias vr="vim -"
 
 alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
+
+alias today='gcalcli agenda 10am 7pm'
 
 #
 # Fasd (https://github.com/clvv/fasd)
@@ -59,6 +60,7 @@ alias lines='wc -l'
 alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # node -p "+new Date" | pbcopy' - makes newline
 alias s='say'
 alias sg='say -v Anna' # German - http://apple.stackexchange.com/questions/3454/say-in-different-language
+alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
 
 #
 # Override
@@ -199,6 +201,11 @@ ghc () {
 # SO (not directly related): http://stackoverflow.com/questions/17818167/find-a-pull-request-on-github-where-a-commit-was-originally-created
 gpr () {
   git log --merges --ancestry-path --oneline $1..master | grep 'pull request' | tail -n1 | awk '{ print $5 }';
+}
+
+# git branch delete merged
+gbdm () {
+  git branch --merged | egrep -v master | xargs git branch -d
 }
 
 # utils
@@ -493,6 +500,10 @@ compress_mts() {
 # https://github.com/vim-utils/vim-man
 vm() {
   vim -c "Man $1 $2" -c 'silent only'
+}
+
+vv() {
+  vim $(fzf)
 }
 
 s10() {
