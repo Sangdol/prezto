@@ -58,8 +58,11 @@ alias fk='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias ltl='launchctl'
 alias lines='wc -l'
 alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # node -p "+new Date" | pbcopy' - makes newline
+
+# http://apple.stackexchange.com/questions/3454/say-in-different-language
 alias s='say'
-alias sg='say -v Anna' # German - http://apple.stackexchange.com/questions/3454/say-in-different-language
+alias sg='say -v Anna' # German
+alias sb='say -v Daniel' # GB
 alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
 
 #
