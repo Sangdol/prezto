@@ -21,6 +21,13 @@ function! BuildYCM(info)
 endfunction
 
 " Optional plugins
+"
+" Plug Commands
+" PlugInstall [name ...]
+" PlugUpdate [name ...]
+" PlugClean[!]
+" PlugUpgrade
+" PlugStatus
 Plug 'vim-scripts/taglist.vim'
 Plug 'Lokaltog/vim-easymotion'  " :h easymotion.txt
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -49,15 +56,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'SirVer/ultisnips'
-
-" UltiSnips
-" :UltiSnipsEdit
-" https://stackoverflow.com/a/17388948/524588
-let g:UltiSnipsExpandTrigger="<c-j>"
-" https://github.com/SirVer/ultisnips/issues/797
-" https://github.com/SirVer/ultisnips/issues/303
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 " vim-javscript
 let g:javascript_plugin_jsdoc = 1
