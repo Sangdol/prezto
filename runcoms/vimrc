@@ -417,7 +417,6 @@ nnoremap <Leader>q :q<CR>
 
 vnoremap <Leader>p "0p
 
-inoremap kk <C-C>jA
 inoremap <C-B> <C-C>bhi
 inoremap <C-F> <C-C>ea
 "}}}
