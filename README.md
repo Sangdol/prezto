@@ -22,6 +22,8 @@ version is 4.3.17.
           ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
         done
 
+        cd ~/Library/KeyBindings && ln -s ~/.zprezto/mac/DefaultKeyBinding.dict
+
   4. Set Zsh as your default shell:
 
         chsh -s /bin/zsh
