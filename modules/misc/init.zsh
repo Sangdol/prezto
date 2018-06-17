@@ -8,6 +8,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias os=osascript
 alias a="grep"
 alias te="cd ~/temp"
 alias tm="cd /tmp"
@@ -332,12 +333,12 @@ acka () {
   eval "$cmd"
 }
 
-# Python server
+# node http server
 serve() {
-    local rand=$((RANDOM+10000))
-    local port=${1:-$rand}
-    python -m SimpleHTTPServer $port > /dev/null 2>&1 &
-    o http://localhost:$port
+  local port=${1:-8080}
+  http-server -p $port &
+  o http://localhost:$port
+  fg
 }
 
 copy() {
