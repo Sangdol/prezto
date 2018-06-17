@@ -336,7 +336,7 @@ acka () {
 # node http server
 serve() {
   local port=${1:-8080}
-  http-server -p $port &
+  http-server -p $port -c-1 &
   o http://localhost:$port
   fg
 }
