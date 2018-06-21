@@ -241,7 +241,8 @@ dic() {
   dict "$@" | less
 }
 
-cd() {
+unalias cd
+cd () {
   builtin cd "$@" && ls -lh
 }
 
