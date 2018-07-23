@@ -275,9 +275,6 @@ endfunc
 " Make current file executable
 nnoremap <F2> :!chmod +x %<CR>
 
-" Run current line on shell
-nnoremap <F4> :.w !bash<CR>
-
 " Run current file on shell
 nnoremap <F5> :w<CR> :!./%<CR>
 
@@ -291,7 +288,11 @@ set pastetoggle=<F9>
 "}}}
 
 "{{{ Mappings
-"
+
+
+" Copy file path to clipboard
+" https://stackoverflow.com/a/954336/524588
+noremap <silent> <F4> :let @+=expand("%:p")<CR>
 
 " https://stackoverflow.com/a/27878200/524588
 inoremap <C-e> <Esc>A
