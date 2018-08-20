@@ -65,6 +65,7 @@ alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # nod
 alias s='say'
 alias sg='say -v Anna' # German
 alias sb='say -v Daniel' # GB
+alias sf='say -v Amelie' # FR
 alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
 
 #
@@ -338,7 +339,7 @@ acka () {
 # node http server
 serve() {
   local port=${1:-8080}
-  http-server -p $port -c-1 &
+  http-server -c-1 -p $port &
   o http://localhost:$port
   fg
 }
