@@ -34,7 +34,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'kchmck/vim-coffee-script'
 Plug 'mileszs/ack.vim'  " :h ack
 Plug 'vim-voom/VOoM' " :Voomhelp
 Plug 'tpope/vim-surround' " :h surround
@@ -55,6 +54,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'RRethy/vim-illuminate' " https://github.com/RRethy/vim-illuminate
 
 " vim-javscript
 let g:javascript_plugin_jsdoc = 1
