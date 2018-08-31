@@ -83,9 +83,10 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Pythoon pip --user installation path
+# Python pip --user installation path
 # http://stackoverflow.com/questions/7143077/how-can-i-install-packages-in-my-home-folder-with-pip
-export PATH=$HOME/Library/Python/3.6/bin:$PATH
+# https://pipenv.readthedocs.io/en/latest/install/#pragmatic-installation-of-pipenv
+export PATH="$(python3 -m site --user-base)/bin:$PATH"
 
 # GOPATH
 export GOPATH=$HOME/gocode
