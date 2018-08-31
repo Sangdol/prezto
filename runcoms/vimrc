@@ -58,6 +58,9 @@ Plug 'RRethy/vim-illuminate' " https://github.com/RRethy/vim-illuminate
 Plug 'vim-scripts/applescript.vim'
 Plug 'jvirtanen/vim-octave'
 
+" vim-illuminate
+let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
+
 " vim-javscript
 let g:javascript_plugin_jsdoc = 1
 
