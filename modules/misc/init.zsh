@@ -8,6 +8,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias pr="cd ~/projects"
 alias 3=python3
 alias os=osascript
 alias a="grep"
