@@ -323,6 +323,12 @@ nnoremap <silent> k gk
 nnoremap <silent> j gj
 vnoremap <silent> k gk
 vnoremap <silent> j gj
+
+nnoremap <silent> gk k
+nnoremap <silent> gj j
+vnoremap <silent> gk k
+vnoremap <silent> gj j
+
 inoremap <silent> <Up> <Esc>gka
 inoremap <silent> <Down> <Esc>gja
 
