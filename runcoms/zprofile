@@ -103,3 +103,7 @@ export PYTHONIOENCODING="utf_8"
 # https://apple.stackexchange.com/a/69332/8271
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+# Anaconda3
+# https://stackoverflow.com/questions/18675907/how-to-run-conda
+export PATH="$PATH:$HOME/anaconda3/bin"
