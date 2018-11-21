@@ -93,6 +93,10 @@ alias gdm='gd origin/master...' # origin/master - no need to keep the local mast
 alias gdms='gd origin/master... --stat'
 alias gpp='gp -u origin HEAD'
 
+delete-merged() {
+  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+}
+
 # zzom - til, tldr, cheat
 zz () {
   for command in {til,tldr,cheat};do
