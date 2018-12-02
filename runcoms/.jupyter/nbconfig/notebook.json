@@ -1,0 +1,17 @@
+{
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": false,
+    "vim_binding/vim_binding": true
+  },
+  "Notebook": {
+    "Header": false
+  },
+  "keys": {
+    "command": {
+      "bind": {
+        "cmd-esc": "jupyter-notebook:enter-command-mode",
+        "cmd-.": "jupyter-notebook:enter-command-mode"
+      }
+    }
+  }
+}
