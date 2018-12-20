@@ -9,6 +9,8 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 alias per='pipenv run'
+alias python=python3
+alias pip=pip3
 alias 3=python3
 alias os=osascript
 alias pr="cd ~/projects"
