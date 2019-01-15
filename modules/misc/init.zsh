@@ -70,6 +70,7 @@ alias s='say'
 alias sg='say -v Anna' # German
 alias sb='say -v Daniel' # GB
 alias sf='say -v Amelie' # FR
+alias si='say -v Alice' # FR
 alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
 
 #
@@ -528,8 +529,9 @@ s10() {
   done
 }
 
-paramtest() {
+argtest() {
   echo '$#' $#
+  echo '$*' $*
   echo '$@' $@
   echo '$0' $0
   echo '$1' $1
