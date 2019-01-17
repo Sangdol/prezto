@@ -472,9 +472,21 @@ unz() (
   esac && exit $ret
 )
 
+
+
 #
 # etc
 #
+
+# Chrome Google
+cg() {
+  open /Applications/Firefox.app/ "http://www.google.com/search?q=$*";
+}
+
+# Firefox Google
+ffg() {
+  open /Applications/Firefox.app/ "http://www.google.com/search?q=$*";
+}
 
 # Just for Ubuntu
 if [[ "$OSTYPE" == linux-gnu ]]; then
@@ -512,6 +524,13 @@ compress_mts() {
   fi
 }
 
+#
+# aws
+#
+bucket-policy() {
+  aws s3api get-bucket-policy --bucket "$1" --output text | jq .
+}
+
 # vim man
 # https://github.com/vim-utils/vim-man
 vm() {
@@ -537,3 +556,5 @@ argtest() {
   echo '$1' $1
   echo '$2' $2
 }
+
+
