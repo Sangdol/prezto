@@ -430,6 +430,13 @@ vnoremap <Leader>p "0p
 
 inoremap <C-B> <C-C>bhi
 inoremap <C-F> <C-C>ea
+
+" https://vi.stackexchange.com/a/9002/3225
+function! GoogleSearch()
+    let searchterm = getreg("g")
+    silent! exec "silent! !open \"http://google.com/search?q=" . searchterm . "\" &"
+endfunction
+vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR>
 "}}}
 
 " OS Specific {{{
