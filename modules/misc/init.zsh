@@ -50,7 +50,7 @@ alias v='f -e vim' # quick opening files with vim
 #
 # Shortcuts
 #
-alias h="history"
+alias h="howdoi"
 alias oo='o .'
 alias pd="TZ=America/Los_Angeles date" # PST
 alias ud="TZ=UTC date" # UTC
