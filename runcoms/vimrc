@@ -262,7 +262,7 @@ function! Browser()
 endfunction
 
 " Open browser
-nnoremap <Leader>b :call Browser()<CR>
+nnoremap <Leader>b :call Browser()<CR><CR>
 
 " Paste Toggle
 let paste_mode = 0 " 0 = normal, 1 = paste
@@ -434,9 +434,9 @@ inoremap <C-F> <C-C>ea
 " https://vi.stackexchange.com/a/9002/3225
 function! GoogleSearch()
     let searchterm = getreg("g")
-    silent! exec "silent! !open \"http://google.com/search?q=" . searchterm . "\" &"
+    exec "!open \"http://google.com/search?q=" . searchterm . "\" &"
 endfunction
-vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR>
+vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
 "}}}
 
 " OS Specific {{{
