@@ -1,2 +1,4 @@
 [flake8]
 max-line-length = 90
+# ignoring E265 for Neuron comments
+ignore = E265
