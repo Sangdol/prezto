@@ -50,7 +50,6 @@ alias v='f -e vim' # quick opening files with vim
 #
 # Shortcuts
 #
-alias h="howdoi"
 alias oo='o .'
 alias pd="TZ=America/Los_Angeles date" # PST
 alias ud="TZ=UTC date" # UTC
@@ -72,6 +71,13 @@ alias sb='say -v Daniel' # GB
 alias sf='say -v Amelie' # FR
 alias si='say -v Alice' # FR
 alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
+
+alias h="howdoi"
+
+# howdoi --link
+hl() {
+  h -l "$@"
+}
 
 #
 # Override
