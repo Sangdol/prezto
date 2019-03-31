@@ -61,7 +61,13 @@ brew install ccat
 brew install koekeishiya/formulae/khd
 brew services start khd
 
+#
+# --with-default-names
 # http://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
+#
+# --with-default-names is deprecated
+# https://github.com/Homebrew/homebrew-core/issues/15786
+# https://stackoverflow.com/questions/15538452/grep-repetition-operator-operand-invalid/45534127#45534127
 brew install grep --with-default-names
 brew install gnu-sed --with-default-names
 
