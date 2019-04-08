@@ -537,12 +537,14 @@ compress_mts() {
 alias a3='aws s3'
 
 als() {
-  echo "aws s3 ls s3://$1"
-  aws s3 ls s3://$1
+  # Remove 's3://' if exist
+  b=$(echo $1 | sed -r 's/^s3:\/\///')
+  echo "aws s3 ls s3://$b"
+  aws s3 ls s3://$b
 }
 
 acp() {
-  echo "aws s3 cp s3://$1"
+  echo "aws s3 cp $1 $2"
   aws s3 cp $1 $2
 }
 
