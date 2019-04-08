@@ -72,11 +72,12 @@ alias sf='say -v Amelie' # FR
 alias si='say -v Alice' # FR
 alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
 
-alias h="howdoi"
+alias h='function hdi(){ howdoi $* -c; }; hdi'
+alias h5='function hdi(){ howdoi $* -c -n 5; }; hdi'
 
 # howdoi --link
 hl() {
-  h -l "$@"
+  open $(h -l "$@")
 }
 
 #
@@ -533,6 +534,18 @@ compress_mts() {
 #
 # aws
 #
+alias a3='aws s3'
+
+als() {
+  echo "aws s3 ls s3://$1"
+  aws s3 ls s3://$1
+}
+
+acp() {
+  echo "aws s3 cp s3://$1"
+  aws s3 cp $1 $2
+}
+
 bucket-policy() {
   aws s3api get-bucket-policy --bucket "$1" --output text | jq .
 }
