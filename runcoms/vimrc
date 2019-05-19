@@ -57,6 +57,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'RRethy/vim-illuminate' " https://github.com/RRethy/vim-illuminate
 Plug 'vim-scripts/applescript.vim'
 Plug 'jvirtanen/vim-octave'
+Plug 'inside/vim-search-pulse'
 
 " vim-illuminate
 let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
