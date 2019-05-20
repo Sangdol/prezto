@@ -39,6 +39,8 @@ alias dckrr='docker-machine restart default'
 alias dckr='eval "$(docker-machine env default)"'
 
 alias today='gcalcli agenda 10am 7pm'
+alias kc=kubectl
+alias mk=minikube
 
 #
 # Fasd (https://github.com/clvv/fasd)
@@ -578,4 +580,23 @@ argtest() {
   echo '$2' $2
 }
 
+# https://superuser.com/questions/611538/is-there-a-way-to-display-a-countdown-or-stopwatch-timer-in-a-terminal
+countdown(){
+    date1=$((`date +%s` + $1));
+    while [ "$date1" -ge `date +%s` ]; do
+    ## Is this more than 24h away?
+    days=$(($(($(( $date1 - $(date +%s))) * 1 ))/86400))
+    echo -ne "$days day(s) and $(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+    sleep 0.1
+    done
+}
 
+# https://superuser.com/questions/611538/is-there-a-way-to-display-a-countdown-or-stopwatch-timer-in-a-terminal
+stopwatch(){
+    date1=`date +%s`;
+    while true; do
+    days=$(( $(($(date +%s) - date1)) / 86400 ))
+    echo -ne "$days day(s) and $(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
+    sleep 0.1
+    done
+}
