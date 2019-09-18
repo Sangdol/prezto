@@ -8,6 +8,8 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias please=sudo
+alias ag="ag --pager 'less -R'"
 alias per='pipenv run'
 alias python=python3
 alias pip=pip3
@@ -65,6 +67,7 @@ alias fk='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias ltl='launchctl'
 alias lines='wc -l'
 alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # node -p "+new Date" | pbcopy' - makes newline
+alias ipystartup="vi ~/.ipython/profile_default/startup/00-imports.py"
 
 # http://apple.stackexchange.com/questions/3454/say-in-different-language
 alias s='say'
