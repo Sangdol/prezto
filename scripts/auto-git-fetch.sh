@@ -7,6 +7,7 @@ DIR_PREFIX="$HOME/projects"
 for project in $DIR_PREFIX/*/;
 do
   if [[ -d "$project.git" ]];then
+    echo "fetching $project"
     cd "$project" && git fetch
   fi
 done
