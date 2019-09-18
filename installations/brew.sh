@@ -30,36 +30,41 @@ brew install vim --with-override-system-vi
 
 # brew Install other useful binaries
 brew install ack
-brew install git
-brew install node
-brew install rename
-brew install tree
-brew install tig
-brew install emacs
-brew install trash
-brew install fasd
-brew install httpie
-brew install mycli
-brew install lynx
-brew install pstree
-brew install watch
-brew install gcal
-brew install pandoc
-brew install jq
-brew install sleepwatcher
-brew install tldr
-brew install googler
-brew install zsh zsh-completions
-brew install terminal-notifier
-brew install m-cli
-brew install rsync
-brew install translate-shell
-brew install gawk
-brew install mediainfo
+brew install awless
+brew install bat
 brew install ccat
-
-brew install koekeishiya/formulae/khd
-brew services start khd
+brew install cheat
+brew install emacs
+brew install fzf
+brew install gawk
+brew install gcal
+brew install git
+brew install googler
+brew install httpie
+brew install jq
+brew install jump
+brew install lynx
+brew install m-cli
+brew install mediainfo
+brew install mycli
+brew install node
+brew install pandoc
+brew install pstree
+brew install rename
+brew install rsync
+brew install sleepwatcher
+brew install terminal-notifier
+brew install tig
+brew install tldr
+brew install translate-shell
+brew install trash
+brew install tree
+brew install watch
+brew install zsh zsh-completions
+brew install howdoi
+brew install pgcli
+brew install postgresql
+brew install python3
 
 #
 # --with-default-names
