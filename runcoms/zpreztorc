@@ -38,8 +38,8 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'osx-custom' \
   'misc' \
-  'gradle' \
-  'local'
+  'local' \
+  'rsync'
 
 #
 # Autosuggestions
