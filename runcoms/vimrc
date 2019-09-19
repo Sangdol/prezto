@@ -442,6 +442,10 @@ function! GoogleSearch()
     exec "!open \"http://google.com/search?q=" . searchterm . "\" &"
 endfunction
 vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
+
+" copy without newline
+" https://stackoverflow.com/questions/20165596/select-entire-line-in-vim-without-the-new-line-character
+nnoremap <Leader>t ^yg_
 "}}}
 
 " OS Specific {{{
