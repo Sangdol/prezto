@@ -43,6 +43,8 @@ alias dckr='eval "$(docker-machine env default)"'
 alias today='gcalcli agenda 10am 7pm'
 alias kc=kubectl
 alias mk=minikube
+alias zong="$HOME/projects/zong/zong.sh"
+alias sed="/usr/local/bin/sed"
 
 #
 # Fasd (https://github.com/clvv/fasd)
