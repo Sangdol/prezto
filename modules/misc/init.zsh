@@ -10,6 +10,7 @@ alias -- -="cd -"
 
 alias please=sudo
 alias ag="ag --pager 'less -R'"
+alias p="~/github-projects/pronounce/pronounce"
 alias per='pipenv run'
 alias python=python3
 alias pip=pip3
@@ -47,11 +48,9 @@ alias zong="$HOME/projects/zong/zong.sh"
 alias sed="/usr/local/bin/sed"
 
 #
-# Fasd (https://github.com/clvv/fasd)
+# jump
 #
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias f='fasd -f'        # file
-alias v='f -e vim' # quick opening files with vim
+eval "$(jump shell)"
 
 #
 # Shortcuts
