@@ -21,14 +21,12 @@ brew install coreutils
 # brew Install Bash 4
 brew install bash
 
-# brew Install wget with IRI support
-brew install wget --with-iri
-
 # brew Install more recent versions of some OS X tools
-brew install vim --with-override-system-vi
+brew install vim -- --with-override-system-vi
 # brew install homebrew/php/php55 --with-gmp
 
 # brew Install other useful binaries
+brew install wget
 brew install ack
 brew install awless
 brew install bat
@@ -73,8 +71,8 @@ brew install python3
 # --with-default-names is deprecated
 # https://github.com/Homebrew/homebrew-core/issues/15786
 # https://stackoverflow.com/questions/15538452/grep-repetition-operator-operand-invalid/45534127#45534127
-brew install grep --with-default-names
-brew install gnu-sed --with-default-names
+brew install grep -- --with-default-names
+brew install gnu-sed
 
 # Java Specific
 # brew install tomcat
