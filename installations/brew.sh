@@ -71,7 +71,7 @@ brew install python3
 # --with-default-names is deprecated
 # https://github.com/Homebrew/homebrew-core/issues/15786
 # https://stackoverflow.com/questions/15538452/grep-repetition-operator-operand-invalid/45534127#45534127
-brew install grep -- --with-default-names
+brew install grep
 brew install gnu-sed
 
 # Java Specific
