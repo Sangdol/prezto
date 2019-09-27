@@ -13,8 +13,6 @@ alias ag="ag --pager 'less -R'"
 alias p="~/github-projects/pronounce/pronounce"
 alias per='pipenv run'
 alias python=python3
-alias pip=pip3
-alias 3=python3
 alias os=osascript
 alias pr="cd ~/projects"
 alias a="grep"
@@ -45,7 +43,8 @@ alias today='gcalcli agenda 10am 7pm'
 alias kc=kubectl
 alias mk=minikube
 alias zong="$HOME/projects/zong/zong.sh"
-alias sed="/usr/local/bin/sed"
+alias sed="/usr/local/bin/gsed"
+alias til="$HOME/.zprezto/scripts/til.sh"
 
 #
 # jump
@@ -604,3 +603,4 @@ stopwatch(){
     sleep 0.1
     done
 }
+
