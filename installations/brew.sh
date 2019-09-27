@@ -28,7 +28,6 @@ brew install vim -- --with-override-system-vi
 # brew Install other useful binaries
 brew install wget
 brew install ack
-brew install awless
 brew install bat
 brew install ccat
 brew install cheat
@@ -51,7 +50,6 @@ brew install pstree
 brew install rename
 brew install rsync
 brew install sleepwatcher
-brew install terminal-notifier
 brew install tig
 brew install tldr
 brew install translate-shell
@@ -63,6 +61,9 @@ brew install howdoi
 brew install pgcli
 brew install postgresql
 brew install python3
+brew install ag
+
+brew tap wallix/awless; brew install awless
 
 #
 # --with-default-names
