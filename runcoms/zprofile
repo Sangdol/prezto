@@ -106,4 +106,4 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Anaconda3
 # https://stackoverflow.com/questions/18675907/how-to-run-conda
-export PATH="$PATH:$HOME/anaconda3/bin"
+export PATH="/anaconda3/bin:$PATH"
