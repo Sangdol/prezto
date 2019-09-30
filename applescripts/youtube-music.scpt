@@ -4,9 +4,9 @@ on currentMusic()
       repeat with t in tabs of windows
         tell t
           if URL starts with "https://music.youtube.com/" then
-            set pageTitle to title of t as text
+            set playPauseButtonStatus to execute javascript "document.querySelector('#play-pause-button').getAttribute('aria-label')"
 
-            if pageTitle is "YouTube Music" then
+            if playPauseButtonStatus is "Play" then
               set playButton to "► "
             else
               set playButton to ""
