@@ -5,7 +5,7 @@ on like()
         tell t
           if URL starts with "https://music.youtube.com/" then
 
-            set likeStatus to execute javascript "document.querySelector('.middle-controls-buttons ytmusic-menu-renderer paper-icon-button.like').click()"
+            set likeStatus to execute javascript "document.querySelector('.middle-controls-buttons paper-icon-button.like').click()"
 
           end if
         end tell

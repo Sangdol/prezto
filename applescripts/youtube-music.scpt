@@ -15,7 +15,7 @@ on currentMusic()
             set musicTitle to execute javascript "document.querySelector('.content-info-wrapper.ytmusic-player-bar yt-formatted-string > *').innerText"
             set artist to execute javascript "document.querySelector('.subtitle.ytmusic-player-bar yt-formatted-string > *').innerText"
 
-            set likeStatus to execute javascript "document.querySelector('.middle-controls-buttons ytmusic-menu-renderer paper-icon-button.like').getAttribute('aria-pressed')"
+            set likeStatus to execute javascript "document.querySelector('.middle-controls-buttons paper-icon-button.like').getAttribute('aria-pressed')"
             if likeStatus is "true" then
               set likeIcon to " ∙ "
             else
