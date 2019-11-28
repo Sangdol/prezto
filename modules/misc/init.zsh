@@ -27,7 +27,6 @@ alias ackrc="vi ~/.ackrc"
 alias sconf="vi ~/.ssh/config"
 alias we="curl http://wttr.in/berlin"
 alias hosts="sudo vi /etc/hosts"
-alias bt="cd ~/Projects/bash-test-driven-learning/"
 alias ic="~/Documents/scripts/imgcat.sh" # https://www.iterm2.com/documentation-images.html
 alias goo="googler -l en" # https://github.com/jarun/googler
 alias no="terminal-notifier -message"
@@ -47,15 +46,9 @@ alias sed="/usr/local/bin/gsed"
 alias til="$HOME/.zprezto/scripts/til.sh"
 
 #
-# jump
-#
-eval "$(jump shell)"
-
-#
 # Shortcuts
 #
 alias oo='o .'
-alias pd="TZ=America/Los_Angeles date" # PST
 alias ud="TZ=UTC date" # UTC
 alias c="gcal ."
 alias d="date"
@@ -64,6 +57,7 @@ alias misc="vi ~/.zprezto/modules/misc/init.zsh"
 alias loc="vi ~/.zprezto/modules/local/init.zsh"
 alias cl="watch -t -n1 date" # dynamic clock
 alias fk='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias fuck=fk
 alias ltl='launchctl'
 alias lines='wc -l'
 alias ts='node -e "process.stdout.write((+new Date).toString())" | pbcopy' # node -p "+new Date" | pbcopy' - makes newline
