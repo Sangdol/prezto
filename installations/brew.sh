@@ -39,7 +39,7 @@ brew install git
 brew install googler
 brew install httpie
 brew install jq
-brew install jump
+brew install autojump
 brew install lynx
 brew install m-cli
 brew install mediainfo
@@ -62,6 +62,7 @@ brew install pgcli
 brew install postgresql
 brew install python3
 brew install ag
+brew install bluetoothconnector
 
 brew tap wallix/awless; brew install awless
 
