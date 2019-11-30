@@ -29,3 +29,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Disable auto-delete when `brew upgrade`
+# https://discourse.brew.sh/t/when-did-brew-upgrade-and-reinstall-start-removing-versions/4054/5
+export HOMEBREW_NO_INSTALL_CLEANUP=1
