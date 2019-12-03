@@ -60,14 +60,14 @@ no_color() {
   sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"
 }
 
-alias mt="mvn-run test | tee >(no_color >| /tmp/maven-test-$(date +"%Y%m%d-%H%M%S").log)"
-alias mp="mvn-run package | tee >(no_color >| /tmp/maven-package-$(date +"%Y%m%d-%H%M%S").log)"
-alias mcp="mvn-run clean package | tee >(no_color >| /tmp/maven-package-$(date +"%Y%m%d-%H%M%S").log)"
-alias mps="mvn-run package -Dmaven.test.skip=true | tee >(no_color >| /tmp/maven-package-$(date +"%Y%m%d-%H%M%S").log)"
-alias mcps="mc && mp -Dmaven.test.skip=true | tee >(no_color >| /tmp/maven-package-$(date +"%Y%m%d-%H%M%S").log)"
-alias mve="mvn-run verify | tee >(no_color >| /tmp/maven-verify-$(date +"%Y%m%d-%H%M%S").log)"
-alias mcv="mvn-run clean verify | tee >(no_color >| /tmp/maven-verify-$(date +"%Y%m%d-%H%M%S").log)"
-alias mvs="mvn-run clean verify -Dmaven.test.skip=true | tee >(no_color >| /tmp/maven-verify-$(date +"%Y%m%d-%H%M%S").log)"
+alias mt="mvn-run test"
+alias mp="mvn-run package"
+alias mcp="mvn-run clean package"
+alias mps="mvn-run package -Dmaven.test.skip=true"
+alias mcps="mc && mp -Dmaven.test.skip=true"
+alias mve="mvn-run verify"
+alias mcv="mvn-run clean verify"
+alias mvs="mvn-run clean verify -Dmaven.test.skip=true"
 
 alias mc="mvn-run clean"
 alias ms="mvn-run site"
