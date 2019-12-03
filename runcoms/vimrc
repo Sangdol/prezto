@@ -282,9 +282,6 @@ func! Paste_on_off()
   return
 endfunc
 
-" Make current file executable
-nnoremap <F2> :!chmod +x %<CR>
-
 " Run current file on shell
 nnoremap <F5> :w<CR> :!./%<CR>
 
