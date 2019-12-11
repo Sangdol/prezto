@@ -63,6 +63,7 @@ brew install postgresql
 brew install python3
 brew install ag
 brew install bluetoothconnector
+brew install exa
 
 brew tap wallix/awless; brew install awless
 
