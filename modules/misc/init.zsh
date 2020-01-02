@@ -9,6 +9,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 alias ls=exa
+alias l="exa -1"
 alias tree="exa -T"
 alias please=sudo
 alias ag="ag --pager 'less -R'"
