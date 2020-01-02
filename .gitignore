@@ -3,3 +3,8 @@
 modules/*/cache.zsh
 .DS_Store
 runcoms/vim/plugged
+
+**/*sqlite
+runcoms/jupyter/lab
+runcoms/jupyter/migrated
+
