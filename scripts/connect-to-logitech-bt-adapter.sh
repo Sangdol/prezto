@@ -15,6 +15,7 @@ if [[ "$active_app" != "Melodics" ]];then
   if [[ $(blueutil --is-connected $LOGITECH_ID) -eq 1 ]];then
     echo "Already connected."
   else
+    blueutil -p 1
     blueutil --connect $LOGITECH_ID
     echo "Connected!"
   fi
