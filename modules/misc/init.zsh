@@ -10,6 +10,7 @@ alias -- -="cd -"
 
 alias ls=exa
 alias l="exa -1"
+alias la="exa -lha"
 alias tree="exa -T"
 alias please=sudo
 alias ag="ag --pager 'less -R'"
