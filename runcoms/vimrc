@@ -433,6 +433,11 @@ vnoremap <Leader>p "0p
 inoremap <C-B> <C-C>bhi
 inoremap <C-F> <C-C>ea
 
+" unmap this to speed up '<Leader>r'
+" this is mapped by the Align plugin.
+nunmap <unique> <Leader>rwp
+nnoremap <Leader>r :reg<CR>
+
 " https://vi.stackexchange.com/a/9002/3225
 function! GoogleSearch()
     let searchterm = getreg("g")
