@@ -40,8 +40,8 @@ Plug 'tpope/vim-surround' " :h surround
 Plug 'danro/rename.vim'
 Plug 'vim-scripts/sql.vim--Stinson', { 'for': 'sql' }
 Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/Align'
-Plug 'vim-scripts/SQLUtilities', { 'for': 'sql' } " Dependant on Align plugin - [range]SQLUFormatter(..list..)
+"Plug 'vim-scripts/Align'
+"Plug 'vim-scripts/SQLUtilities', { 'for': 'sql' } " Dependant on Align plugin - [range]SQLUFormatter(..list..)
 Plug 'chrisbra/Recover.vim' " :FinishRecovery - in the recovered window, deletes swapfile closes the diff window and finishes everything up
 Plug 'tpope/vim-abolish' " :%S / :%Subvert
 Plug 'cespare/vim-toml', { 'for': 'toml' }
@@ -433,9 +433,6 @@ vnoremap <Leader>p "0p
 inoremap <C-B> <C-C>bhi
 inoremap <C-F> <C-C>ea
 
-" unmap this to speed up '<Leader>r'
-" this is mapped by the Align plugin.
-nunmap <unique> <Leader>rwp
 nnoremap <Leader>r :reg<CR>
 
 " https://vi.stackexchange.com/a/9002/3225
