@@ -107,3 +107,9 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Anaconda3
 # https://stackoverflow.com/questions/18675907/how-to-run-conda
 export PATH="$HOME/opt/anaconda3/bin:$PATH"
+
+# Brew Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+# For compilers to find ruby you may need to set:
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
