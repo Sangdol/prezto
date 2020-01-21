@@ -16,8 +16,6 @@ alias tree="exa -T"
 alias please=sudo
 alias ag="ag --pager 'less -R'"
 alias p="~/github-projects/pronounce/pronounce"
-alias per='pipenv run'
-alias python=python3
 alias os=osascript
 alias pr="cd ~/projects"
 alias a="grep"
@@ -49,6 +47,11 @@ alias mk=minikube
 alias zong="$HOME/projects/zong/zong.sh"
 alias sed="/usr/local/bin/gsed"
 alias til="$HOME/.zprezto/scripts/til.sh"
+
+# python
+alias per='pipenv run'
+alias python=python3
+alias da=deactivate
 
 #
 # Shortcuts
