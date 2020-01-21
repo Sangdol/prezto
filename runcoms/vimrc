@@ -355,9 +355,6 @@ nnoremap <silent> <leader>do :diffoff<CR>
 " Delete all
 nnoremap <silent> <Leader>dd ggdG
 
-" Open help page about a word under cusor
-nnoremap <leader>h :h <C-r><C-w><CR>
-
 " Yank all
 nnoremap <Leader>a :%y<CR>
 
