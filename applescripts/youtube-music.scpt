@@ -12,7 +12,7 @@ on currentMusic()
               set playButton to ""
             end if
 
-            set musicTitle to execute javascript "document.querySelector('.content-info-wrapper.ytmusic-player-bar yt-formatted-string > *').innerText"
+            set musicTitle to execute javascript "document.querySelector('.content-info-wrapper.ytmusic-player-bar yt-formatted-string.title').innerText"
             set artist to execute javascript "document.querySelector('.subtitle.ytmusic-player-bar yt-formatted-string > *').innerText"
 
             set likeStatus to execute javascript "document.querySelector('.middle-controls-buttons paper-icon-button.like').getAttribute('aria-pressed')"
