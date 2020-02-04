@@ -80,6 +80,7 @@ alias si='say -v Alice' # FR
 alias icloud='cd ~/Library/Mobile\ Documents' # cd ~ && ln -s ~/Library/Mobile\ Documents iCloud
 
 alias h='function hdi(){ howdoi $* -c; }; hdi'
+alias hp='function hdi(){ howdoi "python $*" -c; }; hdi'
 alias h5='function hdi(){ howdoi $* -c -n 5; }; hdi'
 
 # howdoi --link
