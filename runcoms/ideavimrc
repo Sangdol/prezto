@@ -1,8 +1,5 @@
-" mapleader is not supported yes
-" https://twitter.com/ideavim/status/469079242752667648
-" https://youtrack.jetbrains.com/issue/VIM-650
-" https://youtrack.jetbrains.com/issue/VIM-652
-let mapleader="\<Space>"
+" https://stackoverflow.com/questions/446269/can-i-use-space-as-mapleader-in-vim
+let mapleader=" "
 
 vnoremap <Space>p "0p
 nnoremap <silent> zj o<Esc>
@@ -12,3 +9,10 @@ nnoremap <silent> zl a<Space><Left><Esc>
 inoremap jk <Esc>
 set incsearch
 set clipboard=unnamed
+
+" https://github.com/AlexPl292/IdeaVim-EasyMotion
+set easymotion
+nmap <Leader>f <Leader><Leader>f
+nmap <Leader>F <Leader><Leader>F
+nmap <Leader>j <Leader><Leader>j
+nmap <Leader>k <Leader><Leader>k
