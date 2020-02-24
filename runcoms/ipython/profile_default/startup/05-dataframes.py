@@ -1,3 +1,7 @@
+# https://stackoverflow.com/questions/15777951/how-to-suppress-pandas-future-warning
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 arr = np.array([1, 2, 3])
 
 df = pd.DataFrame({'a': [10, 11, 12], 'b': ['A', 'B', 'C']})
