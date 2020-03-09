@@ -119,3 +119,4 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 # the following to ~/.zshrc:
 
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

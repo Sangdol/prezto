@@ -66,6 +66,7 @@ brew install bluetoothconnector
 brew install exa
 brew install fd
 brew install pyenv
+brew install pyenv-virtualenv
 
 brew tap wallix/awless; brew install awless
 
