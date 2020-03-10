@@ -88,6 +88,10 @@ hl() {
   open $(h -l "$@")
 }
 
+hpl() {
+  open $(h -l "python $@")
+}
+
 #
 # Override
 #
