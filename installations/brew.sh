@@ -67,6 +67,7 @@ brew install exa
 brew install fd
 brew install pyenv
 brew install pyenv-virtualenv
+brew install blueutil
 
 brew tap wallix/awless; brew install awless
 
