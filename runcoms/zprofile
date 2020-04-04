@@ -93,7 +93,7 @@ export GOPATH=$HOME/gocode
 export PATH=$PATH:$GOPATH/bin
 
 # Racket Path
-export PATH=$PATH:"/Applications/Racket v6.9/bin"
+export PATH=$PATH:"/Applications/Racket v7.6/bin"
 
 # Python encodng issue
 # https://stackoverflow.com/a/4027726/524588
