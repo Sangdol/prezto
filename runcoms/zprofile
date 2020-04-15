@@ -120,3 +120,6 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Created by `userpath` on 2020-04-15 13:51:38
+export PATH="$PATH:/Users/slee/.local/bin"
