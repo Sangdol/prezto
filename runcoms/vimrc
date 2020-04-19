@@ -58,6 +58,11 @@ Plug 'RRethy/vim-illuminate' " https://github.com/RRethy/vim-illuminate
 Plug 'vim-scripts/applescript.vim'
 Plug 'jvirtanen/vim-octave'
 Plug 'inside/vim-search-pulse'
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" turn on by default
+au VimEnter * RainbowParentheses
 
 " vim-illuminate
 let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
@@ -346,6 +351,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 
 " Easy escape
 inoremap jk <Esc>
+inoremap jl <Esc>o
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
@@ -441,7 +447,7 @@ vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
 
 " copy without newline
 " https://stackoverflow.com/questions/20165596/select-entire-line-in-vim-without-the-new-line-character
-nnoremap <Leader>t ^yg_
+nnoremap <Leader>t yg_
 "}}}
 
 " OS Specific {{{
