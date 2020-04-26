@@ -144,6 +144,7 @@ vnoremap <Leader>ms :SQLUFormatter<CR>
 
 " NerdCommenter
 nmap <silent> <C-_> <Leader>c<Space>
+vmap <silent> <C-_> <Leader>c<Space>
 
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
