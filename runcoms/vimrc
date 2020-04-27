@@ -62,7 +62,10 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " turn on by default
-au VimEnter * RainbowParentheses
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
+augroup END
 
 " vim-illuminate
 let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
