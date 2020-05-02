@@ -69,6 +69,7 @@ brew install pyenv
 brew install pyenv-virtualenv
 brew install blueutil
 brew install rust
+brew install clojure
 
 brew tap wallix/awless; brew install awless
 
