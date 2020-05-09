@@ -4,6 +4,7 @@
 
 " set <Leader>
 let mapleader="\<Space>"
+let maplocalleader="\<CR>"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -60,6 +61,7 @@ Plug 'jvirtanen/vim-octave'
 Plug 'inside/vim-search-pulse'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'Olical/conjure', {'tag': 'v3.0.0'}
 
 " turn on by default
 augroup rainbow_lisp
@@ -391,9 +393,6 @@ while i <= 9
   execute 'nnoremap <Leader>;' . i . ' :b' . i . '<CR>'
   let i = i + 1
 endwhile
-
-" Easy load
-nnoremap <leader>l :e<SPACE>
 
 " Mistake proofing
 cnoremap W<CR> w<CR>

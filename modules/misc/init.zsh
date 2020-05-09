@@ -8,6 +8,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias vim=nvim
 alias k=kubectl
 alias ls=exa
 alias l="exa -1"
