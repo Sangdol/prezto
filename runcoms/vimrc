@@ -136,7 +136,7 @@ nmap <Leader>zh: :History:<Enter>
 nmap <Leader>zh/ :History/<Enter>
 
 " VOom
-nnoremap <silent> <Leader>mm :Voom markdown<CR>
+nnoremap <silent> <Leader>mm :Voom pandoc<CR>
 nnoremap <silent> <Leader>mt :Voomtoggle<CR>
 nnoremap <silent> <Leader>mq :Voomquit<CR>
 let g:voom_tree_width = 45
