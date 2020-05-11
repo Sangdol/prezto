@@ -117,8 +117,8 @@ nnoremap <Leader>gg :Ggrep<Space>
 " <Leader><Leader>f + <character> - jump to the character
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
-nmap <Leader>f <Leader><Leader>f
-nmap <Leader>F <Leader><Leader>F
+nmap <localleader>f <Leader><Leader>f
+nmap <localleader>d <Leader><Leader>F
 nmap <Leader>j <Leader><Leader>j
 nmap <Leader>k <Leader><Leader>k
 
