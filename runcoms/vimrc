@@ -122,13 +122,16 @@ nmap <localleader>d <Leader><Leader>F
 nmap <Leader>j <Leader><Leader>j
 nmap <Leader>k <Leader><Leader>k
 
+"
 " fzf
+"
 nmap <C-L> :Files<Enter>
 nmap <localleader>af :Files<Enter>
 nmap <localleader>ab :Buffers<Enter>
 nmap <localleader>aa :Ag<Space>
 nmap <localleader>al :Lines<Space>
 nmap <localleader>ac :Commits<Enter>
+" BCommits: commits for the current buffer
 nmap <localleader>av :BCommits<Enter>
 nmap <localleader>az :Commands<Enter>
 nmap <localleader>a: :History:<Enter>
