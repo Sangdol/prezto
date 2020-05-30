@@ -7,6 +7,11 @@ if [[ $(curl -s -I localhost/admin | grep 301 | wc -l) -eq 0 ]]; then
   if [[ $(networksetup -getdnsservers Wi-Fi | grep '127.0.0.1' | wc -l) -gt 0 ]]; then
     echo '127.0.0.1 is deleted from DNS as pihole is not running.'
     networksetup -setdnsservers Wi-Fi Empty
+  else
+    echo 'doing nothing'
   fi
+else
+  echo '127.0.0.1 is added to DNS'
+  networksetup -setdnsservers Wi-Fi 127.0.0.1
 fi
 
