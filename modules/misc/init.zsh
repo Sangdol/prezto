@@ -85,11 +85,11 @@ alias hp='function hdi(){ howdoi "python $*" -c; }; hdi'
 alias h5='function hdi(){ howdoi $* -c -n 5; }; hdi'
 
 # howdoi --link
-hl() {
+lh() {
   open $(h -l "$@")
 }
 
-hpl() {
+lhp() {
   open $(h -l "python $@")
 }
 
