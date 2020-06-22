@@ -25,6 +25,7 @@ case `uname` in
   ;;
   Linux)
     alias vi=vim
+    export TERM=vt100
   ;;
 esac
 
@@ -193,4 +194,14 @@ function cd() {
         [[ ${#dir} != 0 ]] || return 0
         builtin cd "$dir" &> /dev/null
     done
+}
+
+# vim man
+# https://github.com/vim-utils/vim-man
+vm() {
+  vim -c "Man $1 $2" -c 'silent only'
+}
+
+vv() {
+  vim $(fzf)
 }

@@ -409,16 +409,6 @@ bucket-policy() {
   aws s3api get-bucket-policy --bucket "$1" --output text | jq .
 }
 
-# vim man
-# https://github.com/vim-utils/vim-man
-vm() {
-  vim -c "Man $1 $2" -c 'silent only'
-}
-
-vv() {
-  vim $(fzf)
-}
-
 s10() {
   for i in {1..10};do
     say $@
