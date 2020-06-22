@@ -23,23 +23,42 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'prompt' \
-  'git' \
-  'maven' \
-  'fasd' \
-  'osx-custom' \
-  'misc' \
-  'local' \
-  'rsync'
+
+case `uname` in
+  Darwin)
+    zstyle ':prezto:load' pmodule \
+      'environment' \
+      'terminal' \
+      'editor' \
+      'history' \
+      'directory' \
+      'spectrum' \
+      'utility' \
+      'completion' \
+      'prompt' \
+      'git' \
+      'maven' \
+      'osx-custom' \
+      'misc' \
+      'local' \
+  ;;
+  Linux)
+    zstyle ':prezto:load' pmodule \
+      'environment' \
+      'terminal' \
+      'editor' \
+      'history' \
+      'directory' \
+      'spectrum' \
+      'utility' \
+      'completion' \
+      'prompt' \
+      'git' \
+      'maven' \
+      'misc' \
+      'local' \
+  ;;
+esac
 
 #
 # Autosuggestions
