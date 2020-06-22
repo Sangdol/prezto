@@ -65,7 +65,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 if has("mac")
   Plug 'Olical/conjure', {'tag': 'v3.0.0'}
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-else
+endif
 
 " turn on by default
 augroup rainbow_lisp
