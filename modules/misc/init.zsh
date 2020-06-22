@@ -14,6 +14,7 @@ alias tm="cd /tmp"
 alias zp="cd ~/.zprezto"
 alias misc="vi ~/.zprezto/modules/misc/init.zsh"
 alias mac="vi ~/.zprezto/modules/misc/mac.zsh"
+alias hosts="sudo vi /etc/hosts"
 
 #
 # OS
@@ -23,6 +24,7 @@ case `uname` in
     source "${ZDOTDIR:-${HOME}}/.zprezto/modules/misc/mac.zsh"
   ;;
   Linux)
+    alias vi=vim
   ;;
 esac
 

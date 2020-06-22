@@ -41,7 +41,6 @@ alias python=python3
 alias da=deactivate
 
 # vi edit
-alias hosts="sudo vi /etc/hosts"
 alias ackrc="vi ~/.ackrc"
 alias sconf="vi ~/.ssh/config"
 alias loc="vi ~/.zprezto/modules/local/init.zsh"
