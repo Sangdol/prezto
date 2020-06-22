@@ -59,10 +59,13 @@ Plug 'RRethy/vim-illuminate' " https://github.com/RRethy/vim-illuminate
 Plug 'vim-scripts/applescript.vim'
 Plug 'jvirtanen/vim-octave'
 Plug 'inside/vim-search-pulse'
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'Olical/conjure', {'tag': 'v3.0.0'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+if has("mac")
+  Plug 'Olical/conjure', {'tag': 'v3.0.0'}
+  Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+else
 
 " turn on by default
 augroup rainbow_lisp
