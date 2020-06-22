@@ -25,7 +25,7 @@ case `uname` in
   ;;
   Linux)
     alias vi=vim
-    export TERM=vt100
+    export TERM=xterm-256color
   ;;
 esac
 
