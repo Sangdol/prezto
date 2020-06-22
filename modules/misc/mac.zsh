@@ -10,20 +10,18 @@ alias please=sudo
 alias ag="ag --pager 'less -R'"
 alias p="~/github-projects/pronounce/pronounce"
 alias os=osascript
-alias a="grep"
 alias te="cd ~/temp"
-alias wb="cd ~/workbench"
 alias dl="cd ~/Downloads"
 alias jt="cd ~/Projects/java-test-driven-learning/src/test/java"
 alias ic="~/Documents/scripts/imgcat.sh" # https://www.iterm2.com/documentation-images.html
 alias no="terminal-notifier -message"
 alias tl="tail /usr/local/var/log/alfred-timer.log && date" # timer log
 alias jclip="pbpaste | jq . | pbcopy"
-alias path='echo $PATH | tr ":" "\n"'
 
 alias zong="$HOME/projects/zong/zong.sh"
 alias sed="/usr/local/bin/gsed"
 alias til="$HOME/.zprezto/scripts/til.sh"
+alias t='trash -v'
 
 # k8s
 alias k=kubectl
@@ -33,12 +31,6 @@ alias mk=minikube
 # tools
 alias we="curl http://wttr.in/berlin"
 alias goo="googler -l en" # https://github.com/jarun/googler
-
-# python
-alias per='pipenv run'
-alias ipystartup="vi ~/.ipython/profile_default/startup/00-imports.py"
-alias python=python3
-alias da=deactivate
 
 # vi edit
 alias ackrc="vi ~/.ackrc"
@@ -92,11 +84,6 @@ zz () {
   echo "$res" | less
 }
 
-# utils
-alias mv='mv -vi'
-alias cp='cp -vi'
-alias rm='rm -vi'
-alias t='trash -v'
 
 #
 # History
@@ -193,10 +180,6 @@ vi () {
   else
     vim $*
   fi
-}
-
-md () {
-  mkdir -p "$@" && cd "$@"
 }
 
 # ack and

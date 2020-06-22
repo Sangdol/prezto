@@ -8,6 +8,11 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias mv='mv -vi'
+alias cp='cp -vi'
+alias rm='rm -vi'
+
+alias a="grep"
 alias vim=nvim
 alias pr="cd ~/projects"
 alias tm="cd /tmp"
@@ -15,6 +20,8 @@ alias zp="cd ~/.zprezto"
 alias misc="vi ~/.zprezto/modules/misc/init.zsh"
 alias mac="vi ~/.zprezto/modules/misc/mac.zsh"
 alias hosts="sudo vi /etc/hosts"
+alias wb="cd ~/workbench"
+alias path='echo $PATH | tr ":" "\n"'
 
 #
 # OS
@@ -28,6 +35,15 @@ case `uname` in
     export TERM=xterm-256color
   ;;
 esac
+
+#
+# python
+#
+
+alias per='pipenv run'
+alias ipystartup="vi ~/.ipython/profile_default/startup/00-imports.py"
+alias python=python3
+alias da=deactivate
 
 #
 # Git
@@ -204,4 +220,8 @@ vm() {
 
 vv() {
   vim $(fzf)
+}
+
+md () {
+  mkdir -p "$@" && cd "$@"
 }
