@@ -16,10 +16,9 @@ if [[ "$active_app" != "Melodics" ]];then
     echo "Already connected."
   else
     blueutil -p 1
-    blueutil --connect $LOGITECH_ID
-    echo "Connected!"
+    sleep 2  # wait until it turns on bluetooth
+    blueutil --connect $LOGITECH_ID && echo "Connected!"
   fi
 else
-  blueutil -p 0
-  echo "Disconnected!"
+  blueutil -p 0 && echo "Disconnected!"
 fi
