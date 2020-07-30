@@ -55,6 +55,7 @@ alias gst='git stash' # Set other alias
 alias gd='gwd'    # Override default
 alias gda='git ls-files'  # Set other alias
 alias ga='gia'
+alias gph='git push origin HEAD'
 alias gpu='git pull --rebase'
 alias gt='git tag'
 alias grh='git reset @'
