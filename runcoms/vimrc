@@ -50,7 +50,7 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'vim-utils/vim-man' "g/ - option search
+Plug 'paretje/nvim-man' "g/ - option search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
@@ -61,11 +61,16 @@ Plug 'jvirtanen/vim-octave'
 Plug 'inside/vim-search-pulse'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'kmarius/vim-fish'
 
 if has("mac")
   Plug 'Olical/conjure', {'tag': 'v3.0.0'}
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 endif
+
+" fish
+"Set up :make to use fish for syntax checking.
+autocmd FileType fish compiler fish
 
 " turn on by default
 augroup rainbow_lisp
