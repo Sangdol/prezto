@@ -50,7 +50,10 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'paretje/nvim-man' "g/ - option search
+
+" Having this uncommented makes an error when used
+" Plug 'paretje/nvim-man' "g/ - option search /
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
