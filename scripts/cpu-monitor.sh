@@ -6,7 +6,7 @@
 # https://stackoverflow.com/questions/24129903/notifying-when-using-high-cpu-via-applescript-or-automator
 SAMPLE_SIZE=15
 DELAY_SECS=3
-CPU_THRESHOLD=50
+CPU_THRESHOLD=60
 TOP_APP_NUM=5
 
 # -l: samples
