@@ -31,10 +31,6 @@ pct=$(bc -l <<< "scale=1;$pct / $SAMPLE_SIZE")
 if (( ${pct%.*} >= CPU_THRESHOLD )); then
   msg="Process > $CPU_THRESHOLD%: $name ($pct%)"
 
-  # ignore fucking photoanalysisd
-  if [[ "$name" != "photoanalysisd" ]]; then
-    terminal-notifier -message "$msg" -timeout 5
-  fi
-
+  terminal-notifier -message "$msg" -timeout 5
   echo "$(date +"%Y-%m-%d %H:%M") $msg" >> "$HOME/logs/cpu-monitor.log"
 fi
