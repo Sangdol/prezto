@@ -372,6 +372,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 " Easy escape
 inoremap jk <Esc>
 inoremap jl <Esc>o
+inoremap j; <Esc>O
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
