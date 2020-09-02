@@ -115,11 +115,10 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
-# Load pyenv automatically by appending
-# the following to ~/.zshrc:
-
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+load-pyenv() {
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+}
 
 # Created by `userpath` on 2020-04-15 13:51:38
 export PATH="$PATH:/Users/slee/.local/bin"
