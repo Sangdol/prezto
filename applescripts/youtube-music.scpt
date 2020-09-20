@@ -14,8 +14,13 @@ on currentMusic()
 
             set musicTitle to execute javascript "document.querySelector('.content-info-wrapper.ytmusic-player-bar yt-formatted-string.title').innerText"
 
+            set maxTitleLength to 30
+
             # https://iworkautomation.com/pages/body-text-basics.html
-            set musicTitle to characters 1 thru 25 of musicTitle
+            if (count of characters in musicTitle) is greater than maxTitleLength then
+              set musicTitle to characters 1 thru maxTitleLength of musicTitle
+              set musicTitle to musicTitle & "..."
+            end if
 
             set artist to execute javascript "document.querySelector('.subtitle.ytmusic-player-bar a').innerText"
 
