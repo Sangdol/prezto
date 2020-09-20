@@ -13,6 +13,10 @@ on currentMusic()
             end if
 
             set musicTitle to execute javascript "document.querySelector('.content-info-wrapper.ytmusic-player-bar yt-formatted-string.title').innerText"
+
+            # https://iworkautomation.com/pages/body-text-basics.html
+            set musicTitle to characters 1 thru 25 of musicTitle
+
             set artist to execute javascript "document.querySelector('.subtitle.ytmusic-player-bar a').innerText"
 
             set likeStatus to execute javascript "document.querySelector('.middle-controls-buttons paper-icon-button.like').getAttribute('aria-pressed')"
